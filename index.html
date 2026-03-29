@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <script>
 try {
@@ -16,9 +17,9 @@ try {
 </script>
 <head>
 <meta charset="UTF-8">
-<link rel="apple-touch-icon" href="solio-icon-1024.png">
-<link rel="apple-touch-icon" sizes="1024x1024" href="solio-icon-1024.png">
-<link rel="icon" type="image/png" href="solio-icon-1024.png">
+<link rel="apple-touch-icon" href="solio-icon-1024.png?v=2">
+<link rel="apple-touch-icon" sizes="1024x1024" href="solio-icon-1024.png?v=2">
+<link rel="icon" type="image/png" href="solio-icon-1024.png?v=2">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <!-- FIX: Changed from black-translucent to default — content no longer slides under status bar -->
@@ -55,156 +56,156 @@ body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--tex
 .page.active{opacity:1;pointer-events:all;}
 
 /* NAV — all vars corrected to double-dash */
-.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:10;display:flex;background:var(--surf);border-top:1px solid var(--b1);padding-bottom:var(--sb);}
-.nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 0 10px;border:none;background:none;cursor:pointer;color:var(--sub2);transition:color .2s;-webkit-tap-highlight-color:transparent;outline:none;}
-.nb.on{color:var(--acc);}
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:10;display:flex;background:var(–surf);border-top:1px solid var(–b1);padding-bottom:var(–sb);}
+.nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 0 10px;border:none;background:none;cursor:pointer;color:var(–sub2);transition:color .2s;-webkit-tap-highlight-color:transparent;outline:none;}
+.nb.on{color:var(–acc);}
 .nb svg{width:22px;height:22px;}
 .nb-lbl{font-size:10px;font-weight:500;letter-spacing:.3px;}
-.nb.on .nb-lbl{color:var(--text);font-weight:600;}
+.nb.on .nb-lbl{color:var(–text);font-weight:600;}
 
 /* ONBOARDING */
-.ob{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;max-width:430px;margin:0 auto;overflow:hidden;padding-top:var(--st);}
+.ob{position:fixed;inset:0;z-index:50;background:var(–bg);display:flex;flex-direction:column;max-width:430px;margin:0 auto;overflow:hidden;padding-top:var(–st);}
 .ob.gone{display:none;}
 .ob-pages{flex:1;position:relative;overflow:hidden;}
 .ob-pg{position:absolute;inset:0;overflow-y:auto;display:flex;flex-direction:column;padding:56px 28px 32px;opacity:0;transform:translateX(28px);transition:opacity .42s cubic-bezier(.25,0,.2,1),transform .42s cubic-bezier(.25,0,.2,1),visibility 0s linear .42s;pointer-events:none;visibility:hidden;}
 .ob-pg.active{opacity:1;transform:translateX(0);pointer-events:all;visibility:visible;transition-delay:0s;}
 .ob-pg.exit{opacity:0;transform:translateX(-20px);visibility:visible;pointer-events:none;transition:opacity .28s,transform .28s,visibility 0s linear .28s;}
-.ob-step{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--acc);margin-bottom:14px;}
-.ob-title{font-family:'Lora',serif;font-size:34px;font-weight:500;color:var(--text);line-height:1.15;margin-bottom:12px;}
-.ob-sub{font-size:15px;color:var(--sub);line-height:1.65;}
+.ob-step{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(–acc);margin-bottom:14px;}
+.ob-title{font-family:‘Lora’,serif;font-size:34px;font-weight:500;color:var(–text);line-height:1.15;margin-bottom:12px;}
+.ob-sub{font-size:15px;color:var(–sub);line-height:1.65;}
 .ob-sp{flex:1;min-height:20px;}
 .ob-dots{display:flex;gap:5px;justify-content:center;padding:14px 0 6px;}
-.ob-dot{width:5px;height:5px;border-radius:50%;background:var(--b2);transition:all .2s;}
-.ob-dot.on{background:var(--acc);width:16px;border-radius:3px;}
+.ob-dot{width:5px;height:5px;border-radius:50%;background:var(–b2);transition:all .2s;}
+.ob-dot.on{background:var(–acc);width:16px;border-radius:3px;}
 
 /* PIN */
 .pin-wrap{display:flex;flex-direction:column;align-items:center;width:100%;}
 .pin-dots{display:flex;gap:14px;justify-content:center;height:42px;align-items:center;}
-.pd{width:14px;height:14px;border-radius:50%;border:2px solid var(--b2);background:transparent;transition:background .15s,border-color .15s;}
-.pd.on{background:var(--acc);border-color:var(--acc);}
+.pd{width:14px;height:14px;border-radius:50%;border:2px solid var(–b2);background:transparent;transition:background .15s,border-color .15s;}
+.pd.on{background:var(–acc);border-color:var(–acc);}
 .pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;margin-top:16px;}
-.pk{height:58px;border-radius:14px;border:none;background:var(--card);color:var(--text);font-family:'Lora',serif;font-size:22px;cursor:pointer;transition:background .12s,transform .1s;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;outline:none;}
-.pk:active{background:var(--card2);transform:scale(.95);}
-.pk.del{font-family:'DM Sans',sans-serif;font-size:16px;}
+.pk{height:58px;border-radius:14px;border:none;background:var(–card);color:var(–text);font-family:‘Lora’,serif;font-size:22px;cursor:pointer;transition:background .12s,transform .1s;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;outline:none;}
+.pk:active{background:var(–card2);transform:scale(.95);}
+.pk.del{font-family:‘DM Sans’,sans-serif;font-size:16px;}
 .pk.emp{background:transparent;cursor:default;pointer-events:none;}
 
 /* CHIPS */
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
-.chip{padding:8px 14px;border-radius:20px;border:1px solid var(--b2);background:var(--card);color:var(--sub);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;}
-.chip.on{border-color:var(--acc);background:var(--acc);color:#fff;}
+.chip{padding:8px 14px;border-radius:20px;border:1px solid var(–b2);background:var(–card);color:var(–sub);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;}
+.chip.on{border-color:var(–acc);background:var(–acc);color:#fff;}
 
 /* BUTTONS */
-.btn{width:100%;height:50px;border-radius:14px;border:none;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .15s;-webkit-tap-highlight-color:transparent;outline:none;}
+.btn{width:100%;height:50px;border-radius:14px;border:none;font-family:‘DM Sans’,sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .15s;-webkit-tap-highlight-color:transparent;outline:none;}
 .btn:active{opacity:.85;}
-.btn-fill{background:var(--acc);color:#fff;}
-.btn-ghost{background:transparent;border:1px solid var(--b2);color:var(--sub);}
+.btn-fill{background:var(–acc);color:#fff;}
+.btn-ghost{background:transparent;border:1px solid var(–b2);color:var(–sub);}
 
 /* INPUT */
-.inp{width:100%;height:48px;background:var(--card2);border:1px solid var(--b2);border-radius:12px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;padding:0 14px;outline:none;transition:border-color .2s;}
-.inp:focus{border-color:var(--acc);}
-.lbl{font-size:11px;color:var(--sub);font-weight:500;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px;display:block;}
+.inp{width:100%;height:48px;background:var(–card2);border:1px solid var(–b2);border-radius:12px;color:var(–text);font-family:‘DM Sans’,sans-serif;font-size:16px;padding:0 14px;outline:none;transition:border-color .2s;}
+.inp:focus{border-color:var(–acc);}
+.lbl{font-size:11px;color:var(–sub);font-weight:500;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px;display:block;}
 
 /* TOGGLE */
-.tog{width:44px;height:26px;border-radius:13px;background:var(--card2);border:none;cursor:pointer;position:relative;transition:background .2s;flex-shrink:0;-webkit-tap-highlight-color:transparent;outline:none;}
-.tog.on{background:var(--acc);}
-.tog::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .28s cubic-bezier(.34,1.2,.64,1);box-shadow:0 1px 4px rgba(0,0,0,.3);}
+.tog{width:44px;height:26px;border-radius:13px;background:var(–card2);border:none;cursor:pointer;position:relative;transition:background .2s;flex-shrink:0;-webkit-tap-highlight-color:transparent;outline:none;}
+.tog.on{background:var(–acc);}
+.tog::after{content:’’;position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .28s cubic-bezier(.34,1.2,.64,1);box-shadow:0 1px 4px rgba(0,0,0,.3);}
 .tog.on::after{transform:translateX(18px);}
 .tog:active::after{transform:scaleX(1.2);}
 .tog.on:active::after{transform:translateX(18px) scaleX(1.2);}
 
 /* SLBL */
-.slbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text);display:block;}
+.slbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(–text);display:block;}
 
 /* HOME */
 .home-top{padding:24px 24px 20px;}
-.home-date{font-size:12px;color:var(--sub2);margin-bottom:6px;}
-.home-greet{font-family:'Lora',serif;font-size:26px;font-weight:500;color:var(--text);}
+.home-date{font-size:12px;color:var(–sub2);margin-bottom:6px;}
+.home-greet{font-family:‘Lora’,serif;font-size:26px;font-weight:500;color:var(–text);}
 
 /* JOURNAL CARD */
-.jcard{margin:0 24px 14px;background:var(--card);border:1px solid var(--b1);border-radius:18px;padding:18px;}
+.jcard{margin:0 24px 14px;background:var(–card);border:1px solid var(–b1);border-radius:18px;padding:18px;}
 .jcard-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.jcard-lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text);}
-.seal-btn{font-size:12px;font-weight:500;background:none;cursor:pointer;font-family:'DM Sans',sans-serif;padding:5px 11px;border-radius:8px;border:1px solid var(--b2);color:var(--sub);transition:all .15s;-webkit-tap-highlight-color:transparent;outline:none;}
-.seal-btn.open{color:var(--acc);border-color:rgba(31,92,58,.4);}
-.jta{width:100%;min-height:96px;background:transparent;border:none;outline:none;resize:none;color:var(--text);font-family:'Lora',serif;font-size:15px;line-height:1.8;caret-color:var(--acc);}
-.jta::placeholder{color:var(--sub2);font-style:italic;}
-.jdiv{height:1px;background:var(--b1);margin:12px 0;}
-.jadd{width:100%;height:40px;border-radius:10px;border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:var(--acc);color:#fff;transition:background .2s,color .2s,border .2s;-webkit-tap-highlight-color:transparent;outline:none;}
-.jadd.sealed{background:var(--card2)!important;color:var(--text)!important;border:1px solid var(--b2)!important;}
+.jcard-lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(–text);}
+.seal-btn{font-size:12px;font-weight:500;background:none;cursor:pointer;font-family:‘DM Sans’,sans-serif;padding:5px 11px;border-radius:8px;border:1px solid var(–b2);color:var(–sub);transition:all .15s;-webkit-tap-highlight-color:transparent;outline:none;}
+.seal-btn.open{color:var(–acc);border-color:rgba(31,92,58,.4);}
+.jta{width:100%;min-height:96px;background:transparent;border:none;outline:none;resize:none;color:var(–text);font-family:‘Lora’,serif;font-size:15px;line-height:1.8;caret-color:var(–acc);}
+.jta::placeholder{color:var(–sub2);font-style:italic;}
+.jdiv{height:1px;background:var(–b1);margin:12px 0;}
+.jadd{width:100%;height:40px;border-radius:10px;border:none;font-family:‘DM Sans’,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:var(–acc);color:#fff;transition:background .2s,color .2s,border .2s;-webkit-tap-highlight-color:transparent;outline:none;}
+.jadd.sealed{background:var(–card2)!important;color:var(–text)!important;border:1px solid var(–b2)!important;}
 
 /* MOOD */
-.mood-card{margin:0 24px 14px;background:var(--card);border:1px solid var(--b1);border-radius:18px;padding:18px;}
+.mood-card{margin:0 24px 14px;background:var(–card);border:1px solid var(–b1);border-radius:18px;padding:18px;}
 .mood-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
 .mood-faces{display:flex;gap:8px;}
-.mface{flex:1;height:36px;border-radius:10px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--card2);transition:background .18s;-webkit-tap-highlight-color:transparent;outline:none;}
+.mface{flex:1;height:36px;border-radius:10px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(–card2);transition:background .18s;-webkit-tap-highlight-color:transparent;outline:none;}
 .mface svg{width:20px;height:20px;stroke:#555;fill:none;stroke-width:1.8;stroke-linecap:round;transition:stroke .18s;}
 .mface svg .eye{fill:#555;stroke:none;}
-.mface[data-v="5"].on{background:rgba(31,92,58,.2);}
-.mface[data-v="5"].on svg{stroke:var(--m5);}
-.mface[data-v="5"].on svg .eye{fill:var(--m5);}
-.mface[data-v="4"].on{background:rgba(107,168,107,.2);}
-.mface[data-v="4"].on svg{stroke:var(--m4);}
-.mface[data-v="4"].on svg .eye{fill:var(--m4);}
-.mface[data-v="3"].on{background:rgba(196,168,74,.2);}
-.mface[data-v="3"].on svg{stroke:var(--m3);}
-.mface[data-v="3"].on svg .eye{fill:var(--m3);}
-.mface[data-v="2"].on{background:rgba(196,135,90,.2);}
-.mface[data-v="2"].on svg{stroke:var(--m2);}
-.mface[data-v="2"].on svg .eye{fill:var(--m2);}
-.mface[data-v="1"].on{background:rgba(192,85,85,.2);}
-.mface[data-v="1"].on svg{stroke:var(--m1);}
-.mface[data-v="1"].on svg .eye{fill:var(--m1);}
+.mface[data-v=“5”].on{background:rgba(31,92,58,.2);}
+.mface[data-v=“5”].on svg{stroke:var(–m5);}
+.mface[data-v=“5”].on svg .eye{fill:var(–m5);}
+.mface[data-v=“4”].on{background:rgba(107,168,107,.2);}
+.mface[data-v=“4”].on svg{stroke:var(–m4);}
+.mface[data-v=“4”].on svg .eye{fill:var(–m4);}
+.mface[data-v=“3”].on{background:rgba(196,168,74,.2);}
+.mface[data-v=“3”].on svg{stroke:var(–m3);}
+.mface[data-v=“3”].on svg .eye{fill:var(–m3);}
+.mface[data-v=“2”].on{background:rgba(196,135,90,.2);}
+.mface[data-v=“2”].on svg{stroke:var(–m2);}
+.mface[data-v=“2”].on svg .eye{fill:var(–m2);}
+.mface[data-v=“1”].on{background:rgba(192,85,85,.2);}
+.mface[data-v=“1”].on svg{stroke:var(–m1);}
+.mface[data-v=“1”].on svg .eye{fill:var(–m1);}
 
 /* METRICS CARD */
-.mcard{margin:0 24px 14px;background:var(--card);border:1px solid var(--b1);border-radius:18px;overflow:hidden;padding-bottom:12px;}
-.mcard-hdr{padding:16px 18px 10px;border-bottom:1px solid var(--b1);background:var(--card);}
-.mrow{display:flex;align-items:center;gap:12px;padding:12px 18px;border-top:1px solid var(--b1);}
+.mcard{margin:0 24px 14px;background:var(–card);border:1px solid var(–b1);border-radius:18px;overflow:hidden;padding-bottom:12px;}
+.mcard-hdr{padding:16px 18px 10px;border-bottom:1px solid var(–b1);background:var(–card);}
+.mrow{display:flex;align-items:center;gap:12px;padding:12px 18px;border-top:1px solid var(–b1);}
 .mrow-icon{font-size:18px;width:24px;text-align:center;flex-shrink:0;}
 .mrow-body{flex:1;min-width:0;}
-.mrow-name{font-size:14px;font-weight:500;color:var(--text);}
-.mrow-sub{font-size:11px;color:var(--sub2);margin-top:2px;}
+.mrow-name{font-size:14px;font-weight:500;color:var(–text);}
+.mrow-sub{font-size:11px;color:var(–sub2);margin-top:2px;}
 .mrow-right{display:flex;align-items:center;gap:6px;flex-shrink:0;}
-.minput{width:58px;height:34px;background:var(--card2);border:1px solid var(--b2);border-radius:8px;color:var(--text);font-family:'Lora',serif;font-size:15px;font-weight:400;text-align:center;outline:none;transition:border-color .2s;}
-.minput:focus{border-color:var(--acc);}
-.munit{font-size:9px;color:var(--sub2);}
-.mcheck{width:32px;height:32px;border-radius:50%;border:2px solid var(--b2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s;-webkit-tap-highlight-color:transparent;outline:none;}
-.mcheck.done{background:var(--acc);border-color:var(--acc);}
+.minput{width:58px;height:34px;background:var(–card2);border:1px solid var(–b2);border-radius:8px;color:var(–text);font-family:‘Lora’,serif;font-size:15px;font-weight:400;text-align:center;outline:none;transition:border-color .2s;}
+.minput:focus{border-color:var(–acc);}
+.munit{font-size:9px;color:var(–sub2);}
+.mcheck{width:32px;height:32px;border-radius:50%;border:2px solid var(–b2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s;-webkit-tap-highlight-color:transparent;outline:none;}
+.mcheck.done{background:var(–acc);border-color:var(–acc);}
 
 /* ENTRIES */
-.ecard{margin:0 24px 20px;background:var(--card);border:1px solid var(--b1);border-radius:18px;overflow:hidden;}
+.ecard{margin:0 24px 20px;background:var(–card);border:1px solid var(–b1);border-radius:18px;overflow:hidden;}
 .ecard-hdr{padding:14px 18px 10px;}
-.erow{padding:11px 18px;border-top:1px solid var(--b1);display:flex;align-items:center;gap:8px;}
+.erow{padding:11px 18px;border-top:1px solid var(–b1);display:flex;align-items:center;gap:8px;}
 .erow-body{flex:1;min-width:0;}
-.etime{font-size:10px;color:var(--sub2);letter-spacing:.3px;margin-bottom:4px;}
-.etext{font-family:'Lora',serif;font-size:14px;color:var(--text);line-height:1.7;}
-.edel{background:none;border:none;cursor:pointer;color:var(--sub2);font-size:18px;padding:0;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent;outline:none;}
+.etime{font-size:10px;color:var(–sub2);letter-spacing:.3px;margin-bottom:4px;}
+.etext{font-family:‘Lora’,serif;font-size:14px;color:var(–text);line-height:1.7;}
+.edel{background:none;border:none;cursor:pointer;color:var(–sub2);font-size:18px;padding:0;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent;outline:none;}
 
 /* JOURNAL PAGE */
-.jentry{margin:0 24px 10px;background:var(--card);border:1px solid var(--b1);border-radius:16px;padding:16px;}
+.jentry{margin:0 24px 10px;background:var(–card);border:1px solid var(–b1);border-radius:16px;padding:16px;}
 .jentry.today{border-color:rgba(31,92,58,.3);}
 .jentry-hdr{display:flex;align-items:center;margin-bottom:10px;}
-.jentry-date{font-size:12px;font-weight:600;color:var(--sub);flex:1;cursor:pointer;}
-.jentry-badge{font-size:11px;color:var(--sub2);margin-right:10px;}
-.jentry-del{background:none;border:none;cursor:pointer;color:var(--sub2);font-size:20px;padding:0;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent;outline:none;}
-.jprev{font-family:'Lora',serif;font-size:14px;color:var(--sub);line-height:1.65;filter:blur(4px);user-select:none;overflow:hidden;max-height:56px;transition:filter .25s,color .25s,max-height .3s;}
-.jprev.open{filter:none;color:var(--text);max-height:800px;}
-.jentry.today .jprev{filter:none;color:var(--text);max-height:800px;}
+.jentry-date{font-size:12px;font-weight:600;color:var(–sub);flex:1;cursor:pointer;}
+.jentry-badge{font-size:11px;color:var(–sub2);margin-right:10px;}
+.jentry-del{background:none;border:none;cursor:pointer;color:var(–sub2);font-size:20px;padding:0;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent;outline:none;}
+.jprev{font-family:‘Lora’,serif;font-size:14px;color:var(–sub);line-height:1.65;filter:blur(4px);user-select:none;overflow:hidden;max-height:56px;transition:filter .25s,color .25s,max-height .3s;}
+.jprev.open{filter:none;color:var(–text);max-height:800px;}
+.jentry.today .jprev{filter:none;color:var(–text);max-height:800px;}
 .lock-wrap{display:flex;flex-direction:column;align-items:center;padding:60px 28px 28px;text-align:center;}
-.lock-ico{width:70px;height:70px;border-radius:20px;background:var(--card);border:1px solid var(--b1);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:18px;}
-.lock-ttl{font-family:'Lora',serif;font-size:21px;font-weight:500;color:var(--text);margin-bottom:8px;}
-.lock-sub{font-size:13px;color:var(--sub);line-height:1.5;}
+.lock-ico{width:70px;height:70px;border-radius:20px;background:var(–card);border:1px solid var(–b1);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:18px;}
+.lock-ttl{font-family:‘Lora’,serif;font-size:21px;font-weight:500;color:var(–text);margin-bottom:8px;}
+.lock-sub{font-size:13px;color:var(–sub);line-height:1.5;}
 
 /* DATA */
 .time-row{display:flex;gap:6px;padding:0 24px 20px;}
-.tchip{padding:7px 18px;border-radius:9px;border:none;background:transparent;color:var(--sub2);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;-webkit-tap-highlight-color:transparent;outline:none;}
-.tchip.on{background:var(--card2);color:var(--text);}
-.dchart{margin:0 24px 12px;background:var(--card);border:1px solid var(--b1);border-radius:16px;padding:16px;}
+.tchip{padding:7px 18px;border-radius:9px;border:none;background:transparent;color:var(–sub2);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;font-family:‘DM Sans’,sans-serif;-webkit-tap-highlight-color:transparent;outline:none;}
+.tchip.on{background:var(–card2);color:var(–text);}
+.dchart{margin:0 24px 12px;background:var(–card);border:1px solid var(–b1);border-radius:16px;padding:16px;}
 .dchart-hdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;gap:8px;}
-.dchart-name{font-size:13px;font-weight:600;color:var(--text);}
-.dchart-avg{font-size:12px;color:var(--sub);}
-.dchart-empty{font-size:12px;color:var(--sub2);text-align:center;padding:18px 0;}
+.dchart-name{font-size:13px;font-weight:600;color:var(–text);}
+.dchart-avg{font-size:12px;color:var(–sub);}
+.dchart-empty{font-size:12px;color:var(–sub2);text-align:center;padding:18px 0;}
 .hm-wrap{margin:0 24px 24px;}
-.hm-card{background:var(--card);border:1px solid var(--b1);border-radius:16px;padding:16px;}
+.hm-card{background:var(–card);border:1px solid var(–b1);border-radius:16px;padding:16px;}
 .hm-hdr{margin-bottom:12px;}
 .hm-grid{display:flex;flex-wrap:wrap;gap:3px;}
 .hm-cell{aspect-ratio:1;border-radius:3px;}
@@ -213,34 +214,34 @@ body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--tex
 
 /* SETTINGS */
 .sg{margin-bottom:26px;}
-.sg-lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--sub2);padding:0 24px;margin-bottom:8px;display:block;}
-.scard{margin:0 24px;background:var(--card);border:1px solid var(--b1);border-radius:16px;overflow:hidden;}
-.srow{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--b1);}
+.sg-lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(–sub2);padding:0 24px;margin-bottom:8px;display:block;}
+.scard{margin:0 24px;background:var(–card);border:1px solid var(–b1);border-radius:16px;overflow:hidden;}
+.srow{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(–b1);}
 .srow:last-child{border-bottom:none;}
-.srow-lbl{font-size:14px;color:var(--text);}
-.srow-val{font-size:13px;color:var(--sub);}
-.danger .srow-lbl{color:var(--red);}
+.srow-lbl{font-size:14px;color:var(–text);}
+.srow-val{font-size:13px;color:var(–sub);}
+.danger .srow-lbl{color:var(–red);}
 
 /* MODAL OVERLAY */
 .moverlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:80;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .25s,visibility .25s;display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(6px);}
 .moverlay.on{opacity:1;pointer-events:all;visibility:visible;}
-.mbox{background:var(--surf);border:1px solid var(--b2);border-radius:22px;padding:0;width:100%;max-width:360px;max-height:85vh;overflow-y:auto;}
+.mbox{background:var(–surf);border:1px solid var(–b2);border-radius:22px;padding:0;width:100%;max-width:360px;max-height:85vh;overflow-y:auto;}
 .mbox > div{display:flex;flex-direction:column;gap:14px;padding:26px 24px;}
 .moverlay.on .mbox{animation:mboxIn .28s cubic-bezier(.34,1.06,.64,1) both;}
 @keyframes mboxIn{from{opacity:0;transform:scale(.94) translateY(8px);}to{opacity:1;transform:scale(1) translateY(0);}}
 .moverlay.on .mbox.noAnim{animation:none;}
-.mtitle{font-family:'Lora',serif;font-size:20px;font-weight:500;color:var(--text);line-height:1.2;}
-.msub{font-size:13px;color:var(--sub);line-height:1.55;padding-top:2px;}
+.mtitle{font-family:‘Lora’,serif;font-size:20px;font-weight:500;color:var(–text);line-height:1.2;}
+.msub{font-size:13px;color:var(–sub);line-height:1.55;padding-top:2px;}
 
 /* TOAST */
-.toast{position:fixed;bottom:calc(62px + var(--sb) + 14px);left:50%;transform:translateX(-50%) translateY(8px);background:var(--text);color:var(--bg);padding:10px 20px;border-radius:20px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;z-index:100;transition:opacity .2s,transform .2s cubic-bezier(.34,1.1,.64,1);white-space:nowrap;}
+.toast{position:fixed;bottom:calc(62px + var(–sb) + 14px);left:50%;transform:translateX(-50%) translateY(8px);background:var(–text);color:var(–bg);padding:10px 20px;border-radius:20px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;z-index:100;transition:opacity .2s,transform .2s cubic-bezier(.34,1.1,.64,1);white-space:nowrap;}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
 
 /* EMPTY */
 .empty{display:flex;flex-direction:column;align-items:center;padding:72px 32px 32px;text-align:center;gap:10px;}
 .empty-ico{font-size:40px;margin-bottom:6px;}
-.empty-ttl{font-family:'Lora',serif;font-size:18px;font-weight:500;color:var(--text);}
-.empty-sub{font-size:13px;color:var(--sub);line-height:1.6;max-width:280px;}
+.empty-ttl{font-family:‘Lora’,serif;font-size:18px;font-weight:500;color:var(–text);}
+.empty-sub{font-size:13px;color:var(–sub);line-height:1.6;max-width:280px;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 .fu{animation:fadeUp .35s cubic-bezier(.2,0,.2,1) both;}
@@ -326,126 +327,128 @@ input,select,textarea{font-size:16px!important;}
 <div class="app" id="app" style="display:none">
   <div class="pages">
 
-    <!-- HOME -->
-    <div class="page active" id="pageHome">
-      <div class="home-top fu">
-        <div class="home-date" id="homeDate"></div>
-        <div class="home-greet" id="homeGreet"></div>
-      </div>
-      <div class="jcard fu fu1">
-        <div class="jcard-hdr">
-          <span class="jcard-lbl">New Entry</span>
-        </div>
-        <textarea class="jta" id="jta" placeholder="Write anything..." oninput="S.draft=this.value;save()"></textarea>
-        <div class="jdiv"></div>
-        <button class="jadd" id="jaddBtn" onclick="onAdd()">Add Entry</button>
-      </div>
-      <div class="mood-card fu fu2" id="moodCard" style="display:none">
-        <div class="mood-hdr"><span class="slbl">Mood</span><span style="font-size:12px;color:var(--sub)" id="moodLbl">Not set</span></div>
-        <div class="mood-faces">
-          <button class="mface" data-v="1" onclick="setMood(1)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 16c.5-1.5 2-2.5 4-2.5s3.5 1 4 2.5"/><circle cx="9.5" cy="9.5" r=".8" class="eye"/><circle cx="14.5" cy="9.5" r=".8" class="eye"/></svg></button>
-          <button class="mface" data-v="2" onclick="setMood(2)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.5 15.5c.8-1.2 2-1.5 3.5-1.5s2.7.3 3.5 1.5"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
-          <button class="mface" data-v="3" onclick="setMood(3)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="9" y1="15" x2="15" y2="15"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
-          <button class="mface" data-v="4" onclick="setMood(4)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.5 14c.8 1.2 2 2 3.5 2s2.7-.8 3.5-2"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
-          <button class="mface" data-v="5" onclick="setMood(5)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 13.5c.5 1.5 2 2.5 4 2.5s3.5-1 4-2.5"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
-        </div>
-      </div>
-      <div class="fu fu3" id="metricSec">
-        <div class="mcard">
-          <div class="mcard-hdr"><span class="slbl">Daily Health</span></div>
-          <div id="metricsGrid"></div>
-        </div>
-      </div>
-      <div id="entrySec">
-        <div class="ecard">
-          <div class="ecard-hdr" style="display:flex;align-items:center;justify-content:space-between">
-            <span class="slbl">Today's Entries</span>
-            <button class="seal-btn open" id="sealBtn" onclick="onSealBtn()">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:inline;vertical-align:middle;margin-right:3px;pointer-events:none"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Seal
-            </button>
-          </div>
-          <div id="entryList"></div>
-        </div>
-      </div>
+```
+<!-- HOME -->
+<div class="page active" id="pageHome">
+  <div class="home-top fu">
+    <div class="home-date" id="homeDate"></div>
+    <div class="home-greet" id="homeGreet"></div>
+  </div>
+  <div class="jcard fu fu1">
+    <div class="jcard-hdr">
+      <span class="jcard-lbl">New Entry</span>
     </div>
+    <textarea class="jta" id="jta" placeholder="Write anything..." oninput="S.draft=this.value;save()"></textarea>
+    <div class="jdiv"></div>
+    <button class="jadd" id="jaddBtn" onclick="onAdd()">Add Entry</button>
+  </div>
+  <div class="mood-card fu fu2" id="moodCard" style="display:none">
+    <div class="mood-hdr"><span class="slbl">Mood</span><span style="font-size:12px;color:var(--sub)" id="moodLbl">Not set</span></div>
+    <div class="mood-faces">
+      <button class="mface" data-v="1" onclick="setMood(1)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 16c.5-1.5 2-2.5 4-2.5s3.5 1 4 2.5"/><circle cx="9.5" cy="9.5" r=".8" class="eye"/><circle cx="14.5" cy="9.5" r=".8" class="eye"/></svg></button>
+      <button class="mface" data-v="2" onclick="setMood(2)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.5 15.5c.8-1.2 2-1.5 3.5-1.5s2.7.3 3.5 1.5"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
+      <button class="mface" data-v="3" onclick="setMood(3)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="9" y1="15" x2="15" y2="15"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
+      <button class="mface" data-v="4" onclick="setMood(4)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.5 14c.8 1.2 2 2 3.5 2s2.7-.8 3.5-2"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
+      <button class="mface" data-v="5" onclick="setMood(5)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 13.5c.5 1.5 2 2.5 4 2.5s3.5-1 4-2.5"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
+    </div>
+  </div>
+  <div class="fu fu3" id="metricSec">
+    <div class="mcard">
+      <div class="mcard-hdr"><span class="slbl">Daily Health</span></div>
+      <div id="metricsGrid"></div>
+    </div>
+  </div>
+  <div id="entrySec">
+    <div class="ecard">
+      <div class="ecard-hdr" style="display:flex;align-items:center;justify-content:space-between">
+        <span class="slbl">Today's Entries</span>
+        <button class="seal-btn open" id="sealBtn" onclick="onSealBtn()">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:inline;vertical-align:middle;margin-right:3px;pointer-events:none"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Seal
+        </button>
+      </div>
+      <div id="entryList"></div>
+    </div>
+  </div>
+</div>
 
-    <!-- JOURNAL -->
-    <div class="page" id="pageJournal">
-      <div style="padding:4px 24px 20px"><div style="font-family:'Lora',serif;font-size:28px;font-weight:500;color:var(--text)">Journal</div></div>
-      <div id="jLockView" style="display:none">
-        <div class="lock-wrap">
-          <div class="lock-ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <div class="lock-ttl">Your journal is private</div>
-          <div class="lock-sub">Enter your PIN to read past entries.</div>
-          <div class="pin-wrap" style="margin-top:22px;max-width:300px">
-            <div class="pin-dots" id="jDots"><div class="pd" id="jpd0"></div><div class="pd" id="jpd1"></div><div class="pd" id="jpd2"></div><div class="pd" id="jpd3"></div></div>
-            <div class="pin-pad">
-              <button class="pk" onclick="jK('1')">1</button><button class="pk" onclick="jK('2')">2</button><button class="pk" onclick="jK('3')">3</button>
-              <button class="pk" onclick="jK('4')">4</button><button class="pk" onclick="jK('5')">5</button><button class="pk" onclick="jK('6')">6</button>
-              <button class="pk" onclick="jK('7')">7</button><button class="pk" onclick="jK('8')">8</button><button class="pk" onclick="jK('9')">9</button>
-              <button class="pk emp"></button><button class="pk" onclick="jK('0')">0</button>
-              <button class="pk del" onclick="jKd()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></button>
-            </div>
-          </div>
-          <button class="btn btn-ghost" onclick="showForgot()" style="max-width:290px;height:44px;font-size:13px;margin-top:14px">Forgot PIN?</button>
+<!-- JOURNAL -->
+<div class="page" id="pageJournal">
+  <div style="padding:4px 24px 20px"><div style="font-family:'Lora',serif;font-size:28px;font-weight:500;color:var(--text)">Journal</div></div>
+  <div id="jLockView" style="display:none">
+    <div class="lock-wrap">
+      <div class="lock-ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <div class="lock-ttl">Your journal is private</div>
+      <div class="lock-sub">Enter your PIN to read past entries.</div>
+      <div class="pin-wrap" style="margin-top:22px;max-width:300px">
+        <div class="pin-dots" id="jDots"><div class="pd" id="jpd0"></div><div class="pd" id="jpd1"></div><div class="pd" id="jpd2"></div><div class="pd" id="jpd3"></div></div>
+        <div class="pin-pad">
+          <button class="pk" onclick="jK('1')">1</button><button class="pk" onclick="jK('2')">2</button><button class="pk" onclick="jK('3')">3</button>
+          <button class="pk" onclick="jK('4')">4</button><button class="pk" onclick="jK('5')">5</button><button class="pk" onclick="jK('6')">6</button>
+          <button class="pk" onclick="jK('7')">7</button><button class="pk" onclick="jK('8')">8</button><button class="pk" onclick="jK('9')">9</button>
+          <button class="pk emp"></button><button class="pk" onclick="jK('0')">0</button>
+          <button class="pk del" onclick="jKd()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></button>
         </div>
       </div>
-      <div id="jOpenView" style="display:none">
-        <div id="jList"></div>
-        <div style="padding:0 24px 24px">
-          <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="lockJ()">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="margin-right:6px;vertical-align:middle;pointer-events:none"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Lock
-          </button>
-        </div>
-      </div>
-      <div id="jEmptyView" style="display:none">
-        <div class="empty"><div class="empty-ico">📖</div><div class="empty-ttl">No entries yet</div><div class="empty-sub">Write on the Home tab. Sealed days appear here, protected by your PIN.</div></div>
-      </div>
+      <button class="btn btn-ghost" onclick="showForgot()" style="max-width:290px;height:44px;font-size:13px;margin-top:14px">Forgot PIN?</button>
     </div>
+  </div>
+  <div id="jOpenView" style="display:none">
+    <div id="jList"></div>
+    <div style="padding:0 24px 24px">
+      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="lockJ()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="margin-right:6px;vertical-align:middle;pointer-events:none"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Lock
+      </button>
+    </div>
+  </div>
+  <div id="jEmptyView" style="display:none">
+    <div class="empty"><div class="empty-ico">📖</div><div class="empty-ttl">No entries yet</div><div class="empty-sub">Write on the Home tab. Sealed days appear here, protected by your PIN.</div></div>
+  </div>
+</div>
 
-    <!-- DATA -->
-    <div class="page" id="pageData">
-      <div style="padding:4px 24px 16px"><div style="font-family:'Lora',serif;font-size:28px;font-weight:500;color:var(--text)">Data</div></div>
-      <div class="time-row">
-        <button class="tchip on" onclick="setPer('week',this)">Week</button>
-        <button class="tchip" onclick="setPer('month',this)">Month</button>
-        <button class="tchip" onclick="setPer('90',this)">90 Days</button>
-        <button class="tchip" onclick="setPer('all',this)">All Time</button>
+<!-- DATA -->
+<div class="page" id="pageData">
+  <div style="padding:4px 24px 16px"><div style="font-family:'Lora',serif;font-size:28px;font-weight:500;color:var(--text)">Data</div></div>
+  <div class="time-row">
+    <button class="tchip on" onclick="setPer('week',this)">Week</button>
+    <button class="tchip" onclick="setPer('month',this)">Month</button>
+    <button class="tchip" onclick="setPer('90',this)">90 Days</button>
+    <button class="tchip" onclick="setPer('all',this)">All Time</button>
+  </div>
+  <div id="dataCharts"></div>
+  <div id="hmWrap" style="display:none">
+    <div class="hm-wrap"><div class="hm-card">
+      <div class="hm-hdr"><span class="slbl" id="hmLabel" style="font-size:10px">Mood — Last 90 Days</span></div>
+      <div class="hm-grid" id="hmGrid"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+        <span style="font-size:10px;color:var(--sub2)">today</span>
+        <div class="hm-legend" style="margin-top:0"><span style="font-size:10px;color:var(--sub2)">Low</span><div class="hm-lc" style="background:var(--m1)"></div><div class="hm-lc" style="background:var(--m2)"></div><div class="hm-lc" style="background:var(--m3)"></div><div class="hm-lc" style="background:var(--m4)"></div><div class="hm-lc" style="background:var(--m5)"></div><span style="font-size:10px;color:var(--sub2)">High</span></div>
+        <span style="font-size:10px;color:var(--sub2)">oldest</span>
       </div>
-      <div id="dataCharts"></div>
-      <div id="hmWrap" style="display:none">
-        <div class="hm-wrap"><div class="hm-card">
-          <div class="hm-hdr"><span class="slbl" id="hmLabel" style="font-size:10px">Mood — Last 90 Days</span></div>
-          <div class="hm-grid" id="hmGrid"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
-            <span style="font-size:10px;color:var(--sub2)">today</span>
-            <div class="hm-legend" style="margin-top:0"><span style="font-size:10px;color:var(--sub2)">Low</span><div class="hm-lc" style="background:var(--m1)"></div><div class="hm-lc" style="background:var(--m2)"></div><div class="hm-lc" style="background:var(--m3)"></div><div class="hm-lc" style="background:var(--m4)"></div><div class="hm-lc" style="background:var(--m5)"></div><span style="font-size:10px;color:var(--sub2)">High</span></div>
-            <span style="font-size:10px;color:var(--sub2)">oldest</span>
-          </div>
-        </div></div>
-      </div>
-    </div>
+    </div></div>
+  </div>
+</div>
 
-    <!-- SETTINGS -->
-    <div class="page" id="pageSettings">
-      <div style="padding:4px 24px 20px"><div style="font-family:'Lora',serif;font-size:28px;font-weight:500;color:var(--text)">Settings</div></div>
-      <div class="sg"><div class="sg-lbl">Tracked Metrics</div><div class="scard" id="sMetrics"></div></div>
-      <div class="sg"><div class="sg-lbl">Tracking Options</div><div class="scard">
-        <div class="srow"><span class="srow-lbl">Mood Tracking</span><button class="tog" id="moodTog" onclick="togMood()"></button></div>
-        <div class="srow"><span class="srow-lbl">Streaks</span><button class="tog" id="strkTog" onclick="togStrk()"></button></div>
-      </div></div>
-      <div class="sg"><div class="sg-lbl">Appearance</div><div class="scard">
-        <div class="srow"><span class="srow-lbl">Dark Mode</span><button class="tog" id="lightTog" onclick="togLight()"></button></div>
-      </div></div>
-      <div class="sg"><div class="sg-lbl">Privacy</div><div class="scard">
-        <div class="srow" onclick="openChangePIN()" style="cursor:pointer"><span class="srow-lbl" id="pinLbl">Set PIN</span><span class="srow-val">›</span></div>
-        <div class="srow" onclick="openRecovery()" style="cursor:pointer"><span class="srow-lbl">Recovery Question</span><span class="srow-val">›</span></div>
-      </div></div>
-      <div class="sg"><div class="sg-lbl">Data</div><div class="scard">
-        <div class="srow" onclick="exportData()" style="cursor:pointer"><span class="srow-lbl">Export data</span></div>
-        <div class="srow danger" onclick="doDelete()" style="cursor:pointer"><span class="srow-lbl">Delete all data</span></div>
-      </div></div>
-    </div>
+<!-- SETTINGS -->
+<div class="page" id="pageSettings">
+  <div style="padding:4px 24px 20px"><div style="font-family:'Lora',serif;font-size:28px;font-weight:500;color:var(--text)">Settings</div></div>
+  <div class="sg"><div class="sg-lbl">Tracked Metrics</div><div class="scard" id="sMetrics"></div></div>
+  <div class="sg"><div class="sg-lbl">Tracking Options</div><div class="scard">
+    <div class="srow"><span class="srow-lbl">Mood Tracking</span><button class="tog" id="moodTog" onclick="togMood()"></button></div>
+    <div class="srow"><span class="srow-lbl">Streaks</span><button class="tog" id="strkTog" onclick="togStrk()"></button></div>
+  </div></div>
+  <div class="sg"><div class="sg-lbl">Appearance</div><div class="scard">
+    <div class="srow"><span class="srow-lbl">Dark Mode</span><button class="tog" id="lightTog" onclick="togLight()"></button></div>
+  </div></div>
+  <div class="sg"><div class="sg-lbl">Privacy</div><div class="scard">
+    <div class="srow" onclick="openChangePIN()" style="cursor:pointer"><span class="srow-lbl" id="pinLbl">Set PIN</span><span class="srow-val">›</span></div>
+    <div class="srow" onclick="openRecovery()" style="cursor:pointer"><span class="srow-lbl">Recovery Question</span><span class="srow-val">›</span></div>
+  </div></div>
+  <div class="sg"><div class="sg-lbl">Data</div><div class="scard">
+    <div class="srow" onclick="exportData()" style="cursor:pointer"><span class="srow-lbl">Export data</span></div>
+    <div class="srow danger" onclick="doDelete()" style="cursor:pointer"><span class="srow-lbl">Delete all data</span></div>
+  </div></div>
+</div>
+```
 
   </div>
 
@@ -464,123 +467,125 @@ input,select,textarea{font-size:16px!important;}
 <div class="moverlay" id="modal" onclick="if(event.target===this)onModalBackdrop()">
   <div class="mbox" id="mbox">
 
-    <!-- SEAL CONFIRM -->
-    <div id="scr-seal">
-      <div class="mtitle">Seal today?</div>
-      <div class="msub">Your writing will be saved. Unseal anytime — at midnight it locks permanently.</div>
-      <button class="btn btn-fill" onclick="doSeal()">Seal the day</button>
-      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
-    </div>
+```
+<!-- SEAL CONFIRM -->
+<div id="scr-seal">
+  <div class="mtitle">Seal today?</div>
+  <div class="msub">Your writing will be saved. Unseal anytime — at midnight it locks permanently.</div>
+  <button class="btn btn-fill" onclick="doSeal()">Seal the day</button>
+  <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+</div>
 
-    <!-- HOME UNLOCK -->
-    <div id="scr-unlock" style="display:none">
-      <div class="mtitle">Unlock today</div>
-      <div class="msub" style="height:36px;overflow:hidden">Enter your PIN to continue writing.</div>
-      <div class="pin-wrap">
-        <div class="pin-dots" id="huDots"><div class="pd" id="hud0"></div><div class="pd" id="hud1"></div><div class="pd" id="hud2"></div><div class="pd" id="hud3"></div></div>
-        <div class="pin-pad">
-          <button class="pk" onclick="huK('1')">1</button><button class="pk" onclick="huK('2')">2</button><button class="pk" onclick="huK('3')">3</button>
-          <button class="pk" onclick="huK('4')">4</button><button class="pk" onclick="huK('5')">5</button><button class="pk" onclick="huK('6')">6</button>
-          <button class="pk" onclick="huK('7')">7</button><button class="pk" onclick="huK('8')">8</button><button class="pk" onclick="huK('9')">9</button>
-          <button class="pk emp"></button><button class="pk" onclick="huK('0')">0</button>
-          <button class="pk del" onclick="huKd()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></button>
-        </div>
-      </div>
-      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+<!-- HOME UNLOCK -->
+<div id="scr-unlock" style="display:none">
+  <div class="mtitle">Unlock today</div>
+  <div class="msub" style="height:36px;overflow:hidden">Enter your PIN to continue writing.</div>
+  <div class="pin-wrap">
+    <div class="pin-dots" id="huDots"><div class="pd" id="hud0"></div><div class="pd" id="hud1"></div><div class="pd" id="hud2"></div><div class="pd" id="hud3"></div></div>
+    <div class="pin-pad">
+      <button class="pk" onclick="huK('1')">1</button><button class="pk" onclick="huK('2')">2</button><button class="pk" onclick="huK('3')">3</button>
+      <button class="pk" onclick="huK('4')">4</button><button class="pk" onclick="huK('5')">5</button><button class="pk" onclick="huK('6')">6</button>
+      <button class="pk" onclick="huK('7')">7</button><button class="pk" onclick="huK('8')">8</button><button class="pk" onclick="huK('9')">9</button>
+      <button class="pk emp"></button><button class="pk" onclick="huK('0')">0</button>
+      <button class="pk del" onclick="huKd()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></button>
     </div>
+  </div>
+  <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+</div>
 
-    <!-- VERIFY PIN -->
-    <div id="scr-verify" style="display:none">
-      <div class="mtitle" id="verifyTitle">Verify PIN</div>
-      <div class="msub" style="height:36px;overflow:hidden">Enter your current PIN to continue.</div>
-      <div class="pin-wrap">
-        <div class="pin-dots" id="vyDots"><div class="pd" id="vyd0"></div><div class="pd" id="vyd1"></div><div class="pd" id="vyd2"></div><div class="pd" id="vyd3"></div></div>
-        <div class="pin-pad">
-          <button class="pk" onclick="vyK('1')">1</button><button class="pk" onclick="vyK('2')">2</button><button class="pk" onclick="vyK('3')">3</button>
-          <button class="pk" onclick="vyK('4')">4</button><button class="pk" onclick="vyK('5')">5</button><button class="pk" onclick="vyK('6')">6</button>
-          <button class="pk" onclick="vyK('7')">7</button><button class="pk" onclick="vyK('8')">8</button><button class="pk" onclick="vyK('9')">9</button>
-          <button class="pk emp"></button><button class="pk" onclick="vyK('0')">0</button>
-          <button class="pk del" onclick="vyKd()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></button>
-        </div>
-      </div>
-      <div style="display:flex;gap:10px">
-        <button class="btn btn-ghost" style="height:46px;font-size:14px;flex:1" onclick="closeModal()">Cancel</button>
-        <button class="btn btn-ghost" style="height:46px;font-size:14px;flex:1" onclick="openForgotFromVerify()">Forgot PIN?</button>
-      </div>
+<!-- VERIFY PIN -->
+<div id="scr-verify" style="display:none">
+  <div class="mtitle" id="verifyTitle">Verify PIN</div>
+  <div class="msub" style="height:36px;overflow:hidden">Enter your current PIN to continue.</div>
+  <div class="pin-wrap">
+    <div class="pin-dots" id="vyDots"><div class="pd" id="vyd0"></div><div class="pd" id="vyd1"></div><div class="pd" id="vyd2"></div><div class="pd" id="vyd3"></div></div>
+    <div class="pin-pad">
+      <button class="pk" onclick="vyK('1')">1</button><button class="pk" onclick="vyK('2')">2</button><button class="pk" onclick="vyK('3')">3</button>
+      <button class="pk" onclick="vyK('4')">4</button><button class="pk" onclick="vyK('5')">5</button><button class="pk" onclick="vyK('6')">6</button>
+      <button class="pk" onclick="vyK('7')">7</button><button class="pk" onclick="vyK('8')">8</button><button class="pk" onclick="vyK('9')">9</button>
+      <button class="pk emp"></button><button class="pk" onclick="vyK('0')">0</button>
+      <button class="pk del" onclick="vyKd()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></button>
     </div>
+  </div>
+  <div style="display:flex;gap:10px">
+    <button class="btn btn-ghost" style="height:46px;font-size:14px;flex:1" onclick="closeModal()">Cancel</button>
+    <button class="btn btn-ghost" style="height:46px;font-size:14px;flex:1" onclick="openForgotFromVerify()">Forgot PIN?</button>
+  </div>
+</div>
 
-    <!-- CHANGE PIN -->
-    <div id="scr-pin" style="display:none">
-      <div class="mtitle" id="pinTitle">Set PIN</div>
-      <div class="msub" id="pinSub" style="height:36px;overflow:hidden">Choose a 4-digit PIN to protect your journal.</div>
-      <div class="pin-wrap">
-        <div class="pin-dots" id="cpDots"><div class="pd" id="cpd0"></div><div class="pd" id="cpd1"></div><div class="pd" id="cpd2"></div><div class="pd" id="cpd3"></div></div>
-        <div class="pin-pad">
-          <button class="pk" onclick="cpK('1')">1</button><button class="pk" onclick="cpK('2')">2</button><button class="pk" onclick="cpK('3')">3</button>
-          <button class="pk" onclick="cpK('4')">4</button><button class="pk" onclick="cpK('5')">5</button><button class="pk" onclick="cpK('6')">6</button>
-          <button class="pk" onclick="cpK('7')">7</button><button class="pk" onclick="cpK('8')">8</button><button class="pk" onclick="cpK('9')">9</button>
-          <button class="pk emp"></button><button class="pk" onclick="cpK('0')">0</button>
-          <button class="pk del" onclick="cpKd()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></button>
-        </div>
-      </div>
-      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+<!-- CHANGE PIN -->
+<div id="scr-pin" style="display:none">
+  <div class="mtitle" id="pinTitle">Set PIN</div>
+  <div class="msub" id="pinSub" style="height:36px;overflow:hidden">Choose a 4-digit PIN to protect your journal.</div>
+  <div class="pin-wrap">
+    <div class="pin-dots" id="cpDots"><div class="pd" id="cpd0"></div><div class="pd" id="cpd1"></div><div class="pd" id="cpd2"></div><div class="pd" id="cpd3"></div></div>
+    <div class="pin-pad">
+      <button class="pk" onclick="cpK('1')">1</button><button class="pk" onclick="cpK('2')">2</button><button class="pk" onclick="cpK('3')">3</button>
+      <button class="pk" onclick="cpK('4')">4</button><button class="pk" onclick="cpK('5')">5</button><button class="pk" onclick="cpK('6')">6</button>
+      <button class="pk" onclick="cpK('7')">7</button><button class="pk" onclick="cpK('8')">8</button><button class="pk" onclick="cpK('9')">9</button>
+      <button class="pk emp"></button><button class="pk" onclick="cpK('0')">0</button>
+      <button class="pk del" onclick="cpKd()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></button>
     </div>
+  </div>
+  <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+</div>
 
-    <!-- RECOVERY QUESTION -->
-    <div id="scr-recovery" style="display:none">
-      <div class="mtitle">Recovery Question</div>
-      <div class="msub">Set a question you can answer if you forget your PIN.</div>
-      <div><label class="lbl">Question</label><input class="inp" id="recQ" type="text" placeholder="e.g. First pet's name?"></div>
-      <div><label class="lbl">Answer</label><input class="inp" id="recA" type="text" placeholder="Case-insensitive"></div>
-      <button class="btn btn-fill" onclick="saveRecovery()">Save</button>
-      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
-    </div>
+<!-- RECOVERY QUESTION -->
+<div id="scr-recovery" style="display:none">
+  <div class="mtitle">Recovery Question</div>
+  <div class="msub">Set a question you can answer if you forget your PIN.</div>
+  <div><label class="lbl">Question</label><input class="inp" id="recQ" type="text" placeholder="e.g. First pet's name?"></div>
+  <div><label class="lbl">Answer</label><input class="inp" id="recA" type="text" placeholder="Case-insensitive"></div>
+  <button class="btn btn-fill" onclick="saveRecovery()">Save</button>
+  <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+</div>
 
-    <!-- FORGOT PIN -->
-    <div id="scr-forgot" style="display:none">
-      <div class="mtitle" id="forgotQ">Recovery</div>
-      <div class="msub">Answer correctly to change your PIN.</div>
-      <input class="inp" id="forgotA" type="text" placeholder="Your answer">
-      <button class="btn btn-fill" onclick="checkForgot()">Verify</button>
-      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
-    </div>
+<!-- FORGOT PIN -->
+<div id="scr-forgot" style="display:none">
+  <div class="mtitle" id="forgotQ">Recovery</div>
+  <div class="msub">Answer correctly to change your PIN.</div>
+  <input class="inp" id="forgotA" type="text" placeholder="Your answer">
+  <button class="btn btn-fill" onclick="checkForgot()">Verify</button>
+  <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+</div>
 
-    <!-- GOAL -->
-    <div id="scr-goal" style="display:none">
-      <div class="mtitle" id="goalTitle">Set Goal</div>
-      <div class="msub">Once set, this metric becomes a daily checkoff.</div>
-      <input class="inp" id="goalInp" type="text" placeholder="e.g. 8 hours">
-      <input type="hidden" id="goalMid">
-      <button class="btn btn-fill" onclick="saveGoal()">Save Goal</button>
-      <button id="removeGoalBtn" class="btn btn-ghost" style="height:46px;font-size:14px;color:var(--red);border-color:rgba(192,85,85,.3);display:none" onclick="deleteGoal()">Remove Goal</button>
-      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
-    </div>
+<!-- GOAL -->
+<div id="scr-goal" style="display:none">
+  <div class="mtitle" id="goalTitle">Set Goal</div>
+  <div class="msub">Once set, this metric becomes a daily checkoff.</div>
+  <input class="inp" id="goalInp" type="text" placeholder="e.g. 8 hours">
+  <input type="hidden" id="goalMid">
+  <button class="btn btn-fill" onclick="saveGoal()">Save Goal</button>
+  <button id="removeGoalBtn" class="btn btn-ghost" style="height:46px;font-size:14px;color:var(--red);border-color:rgba(192,85,85,.3);display:none" onclick="deleteGoal()">Remove Goal</button>
+  <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+</div>
 
-    <!-- DAY DETAIL -->
-    <div id="scr-day-detail" style="display:none">
-      <div class="mtitle" id="ddTitle"></div>
-      <div id="ddEntries"></div>
-      <div id="ddMetrics"></div>
-      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Close</button>
-    </div>
+<!-- DAY DETAIL -->
+<div id="scr-day-detail" style="display:none">
+  <div class="mtitle" id="ddTitle"></div>
+  <div id="ddEntries"></div>
+  <div id="ddMetrics"></div>
+  <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Close</button>
+</div>
 
-    <!-- DELETE STAT CONFIRM -->
-    <div id="scr-del-stat" style="display:none">
-      <div class="mtitle">Remove metric?</div>
-      <div class="msub" id="delStatMsg">This will delete all tracked data for this stat.</div>
-      <button class="btn" style="background:var(--red);color:#fff;height:50px;border-radius:14px;font-size:15px;font-weight:600;" onclick="confirmDeleteStat()">Remove</button>
-      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
-    </div>
+<!-- DELETE STAT CONFIRM -->
+<div id="scr-del-stat" style="display:none">
+  <div class="mtitle">Remove metric?</div>
+  <div class="msub" id="delStatMsg">This will delete all tracked data for this stat.</div>
+  <button class="btn" style="background:var(--red);color:#fff;height:50px;border-radius:14px;font-size:15px;font-weight:600;" onclick="confirmDeleteStat()">Remove</button>
+  <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+</div>
 
-    <!-- CUSTOM STAT -->
-    <div id="scr-custom" style="display:none">
-      <div class="mtitle">Add Custom Metric</div>
-      <div class="msub">Define a new metric to track daily.</div>
-      <div><label class="lbl">Name</label><input class="inp" id="csName" type="text" placeholder="e.g. Meditation"></div>
-      <div><label class="lbl">Unit</label><input class="inp" id="csUnit" type="text" placeholder="e.g. min"></div>
-      <button class="btn btn-fill" onclick="saveCustom()">Add Metric</button>
-      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
-    </div>
+<!-- CUSTOM STAT -->
+<div id="scr-custom" style="display:none">
+  <div class="mtitle">Add Custom Metric</div>
+  <div class="msub">Define a new metric to track daily.</div>
+  <div><label class="lbl">Name</label><input class="inp" id="csName" type="text" placeholder="e.g. Meditation"></div>
+  <div><label class="lbl">Unit</label><input class="inp" id="csUnit" type="text" placeholder="e.g. min"></div>
+  <button class="btn btn-fill" onclick="saveCustom()">Add Metric</button>
+  <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Cancel</button>
+</div>
+```
 
   </div>
 </div>
