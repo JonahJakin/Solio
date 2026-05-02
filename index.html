@@ -135,6 +135,12 @@ body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--tex
 /* MOOD */
 .mood-card{margin:0 24px 14px;background:var(--card);border:1px solid var(--b1);border-radius:18px;padding:18px;}
 .mood-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.mood-stack{display:flex;flex-direction:column;gap:16px;}
+.mood-section{display:flex;flex-direction:column;gap:10px;}
+.mood-section + .mood-section{margin-top:10px;}
+.mood-copy{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.mood-name{font-size:12px;font-weight:600;color:var(--text);}
+.mood-note{font-size:11px;color:var(--sub2);}
 .mood-faces{display:flex;gap:8px;}
 .mface{flex:1;height:36px;border-radius:10px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--card2);transition:background .18s;-webkit-tap-highlight-color:transparent;outline:none;}
 .mface svg{width:20px;height:20px;stroke:#555;fill:none;stroke-width:1.8;stroke-linecap:round;transition:stroke .18s;}
@@ -185,10 +191,23 @@ body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--tex
 .jentry-hdr{display:flex;align-items:center;margin-bottom:10px;}
 .jentry-date{font-size:12px;font-weight:600;color:var(--sub);flex:1;cursor:pointer;}
 .jentry-badge{font-size:11px;color:var(--sub2);margin-right:10px;}
+.jentry-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.jentry-mood{font-size:11px;color:var(--acc);font-weight:600;}
+.jentry-actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end;}
+.jentry-actbtn{height:28px;padding:0 10px;border:none;border-radius:999px;background:var(--card2);color:var(--acc);font-size:11px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;}
 .jentry-del{background:none;border:none;cursor:pointer;color:var(--sub2);font-size:20px;padding:0;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent;outline:none;}
-.jprev{font-family:'Lora',serif;font-size:14px;color:var(--sub);line-height:1.65;filter:blur(4px);user-select:none;overflow:hidden;max-height:56px;transition:filter .25s,color .25s,max-height .3s;}
-.jprev.open{filter:none;color:var(--text);max-height:800px;}
-.jentry.today .jprev{filter:none;color:var(--text);max-height:800px;}
+.jprev{font-family:'Lora',serif;font-size:14px;color:var(--text);line-height:1.65;overflow:hidden;max-height:800px;}
+.jentry-cta{display:flex;margin-top:12px;}
+.jentry-cta .jentry-actbtn{height:36px;padding:0 14px;width:100%;justify-content:center;display:flex;align-items:center;}
+.jseg{display:flex;gap:8px;padding:0 24px 16px;}
+.jseg-btn{flex:1;height:38px;border:none;border-radius:11px;background:var(--card2);color:var(--sub);font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
+.jseg-btn.on{background:var(--acc);color:#fff;}
+.jarchive-empty{padding:28px 24px;color:var(--sub);font-size:13px;text-align:center;}
+.jarchive-entry{margin:0 24px 10px;background:var(--card);border:1px solid var(--b1);border-radius:16px;padding:16px;}
+.jarchive-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;}
+.jarchive-time{font-size:11px;color:var(--sub2);margin-top:4px;}
+.jarchive-text{font-family:'Lora',serif;font-size:14px;line-height:1.7;color:var(--text);}
+.link-btn{border:none;background:none;color:var(--acc);font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;padding:0;}
 .lock-wrap{display:flex;flex-direction:column;align-items:center;padding:60px 28px 28px;text-align:center;}
 .lock-ico{width:70px;height:70px;border-radius:20px;background:var(--card);border:1px solid var(--b1);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:18px;}
 .lock-ttl{font-family:'Lora',serif;font-size:21px;font-weight:500;color:var(--text);margin-bottom:8px;}
@@ -201,8 +220,37 @@ body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--tex
 .dchart{margin:0 24px 12px;background:var(--card);border:1px solid var(--b1);border-radius:16px;padding:16px;}
 .dchart-hdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;gap:8px;}
 .dchart-name{font-size:13px;font-weight:600;color:var(--text);}
+.dchart-stats{display:flex;gap:12px;align-items:center;flex-shrink:0;}
+.dchart-stat{text-align:right;}
+.dchart-stat-label{font-size:10px;color:var(--sub2);}
+.dchart-stat-value{font-size:14px;font-weight:600;color:var(--text);}
+.dchart-stat-value.muted{color:var(--sub);}
+.dchart-divider{width:1px;height:26px;background:var(--b2);}
 .dchart-avg{font-size:12px;color:var(--sub);}
 .dchart-empty{font-size:12px;color:var(--sub2);text-align:center;padding:18px 0;}
+.dchart-svg{display:block;width:100%;height:auto;overflow:visible;}
+.chart-point,.chart-block,.hm-point{cursor:pointer;}
+.chart-tip{font-size:10px;color:var(--sub2);line-height:1.5;margin-top:10px;}
+.viz{display:flex;flex-direction:column;gap:10px;}
+.comp-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;align-items:center;}
+.comp-pill{height:40px;border-radius:12px;background:var(--card2);border:none;cursor:pointer;padding:0;}
+.comp-pill.on{background:var(--acc);}
+.comp-month{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:4px;align-items:end;}
+.comp-month-pill{height:40px;border-radius:10px;background:var(--card2);border:none;cursor:pointer;padding:0;}
+.comp-month-pill.on{background:var(--acc);}
+.comp-long{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:2px;align-items:end;}
+.comp-tick-cell{height:40px;border:none;background:transparent;padding:0;cursor:pointer;display:flex;align-items:stretch;justify-content:center;}
+.comp-tick{width:2px;height:40px;border-radius:999px;background:var(--card2);display:block;}
+.comp-tick.on{background:var(--acc);}
+.mood-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;}
+.mood-box{aspect-ratio:1;border-radius:8px;background:var(--card2);border:none;cursor:pointer;position:relative;padding:0;overflow:hidden;}
+.mood-box.on{box-shadow:none;}
+.mood-date{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.82);text-shadow:0 1px 1px rgba(0,0,0,.28);pointer-events:none;}
+.mood-date.dim{color:rgba(255,255,255,.34);}
+.mood-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;}
+.mood-legend{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;color:var(--sub2);}
+.mood-legend-mid{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;}
+.mood-swatch{width:10px;height:10px;border-radius:3px;}
 .hm-wrap{margin:0 24px 24px;}
 .hm-card{background:var(--card);border:1px solid var(--b1);border-radius:16px;padding:16px;}
 .hm-hdr{margin-bottom:12px;}
@@ -219,6 +267,8 @@ body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--tex
 .srow:last-child{border-bottom:none;}
 .srow-lbl{font-size:14px;color:var(--text);}
 .srow-val{font-size:13px;color:var(--sub);}
+.srow.disabled{opacity:.45;}
+.srow.disabled .srow-lbl,.srow.disabled .srow-val{color:var(--sub);}
 .danger .srow-lbl{color:var(--red);}
 
 /* MODAL OVERLAY */
@@ -231,6 +281,12 @@ body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--tex
 .moverlay.on .mbox.noAnim{animation:none;}
 .mtitle{font-family:'Lora',serif;font-size:20px;font-weight:500;color:var(--text);line-height:1.2;}
 .msub{font-size:13px;color:var(--sub);line-height:1.55;padding-top:2px;}
+.dp-rows{display:flex;flex-direction:column;gap:8px;}
+.dp-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 12px;border-radius:12px;background:var(--card2);font-size:13px;color:var(--sub);}
+.dp-row.primary{color:var(--text);background:rgba(31,92,58,.14);border:1px solid rgba(31,92,58,.28);}
+.dp-row-name{font-weight:600;}
+.dp-row.primary .dp-row-name,.dp-row.primary .dp-row-val{color:var(--text);}
+.dp-row-val{color:var(--sub);text-align:right;}
 
 /* TOAST */
 .toast{position:fixed;bottom:calc(62px + var(--sb) + 14px);left:50%;transform:translateX(-50%) translateY(8px);background:var(--text);color:var(--bg);padding:10px 20px;border-radius:20px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;z-index:100;transition:opacity .2s,transform .2s cubic-bezier(.34,1.1,.64,1);white-space:nowrap;}
@@ -283,7 +339,6 @@ input,select,textarea{font-size:16px!important;}
         <div class="chip" data-mid="water" onclick="togObM(this)">Hydration</div>
         <div class="chip" data-mid="protein" onclick="togObM(this)">Protein</div>
         <div class="chip" data-mid="calories" onclick="togObM(this)">Calories</div>
-        <div class="chip" data-mid="steps" onclick="togObM(this)">Steps</div>
       </div>
       <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
         <div class="chip on" id="obMoodChip" onclick="togObMood()" style="border-radius:12px;padding:12px 14px;justify-content:space-between;display:flex"><span>Mood Tracking</span><span id="obMoodLbl" style="font-size:11px;opacity:.7">ON</span></div>
@@ -342,13 +397,7 @@ input,select,textarea{font-size:16px!important;}
       </div>
       <div class="mood-card fu fu2" id="moodCard" style="display:none">
         <div class="mood-hdr"><span class="slbl">Mood</span><span style="font-size:12px;color:var(--sub)" id="moodLbl">Not set</span></div>
-        <div class="mood-faces">
-          <button class="mface" data-v="1" onclick="setMood(1)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 16c.5-1.5 2-2.5 4-2.5s3.5 1 4 2.5"/><circle cx="9.5" cy="9.5" r=".8" class="eye"/><circle cx="14.5" cy="9.5" r=".8" class="eye"/></svg></button>
-          <button class="mface" data-v="2" onclick="setMood(2)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.5 15.5c.8-1.2 2-1.5 3.5-1.5s2.7.3 3.5 1.5"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
-          <button class="mface" data-v="3" onclick="setMood(3)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="9" y1="15" x2="15" y2="15"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
-          <button class="mface" data-v="4" onclick="setMood(4)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.5 14c.8 1.2 2 2 3.5 2s2.7-.8 3.5-2"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
-          <button class="mface" data-v="5" onclick="setMood(5)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 13.5c.5 1.5 2 2.5 4 2.5s3.5-1 4-2.5"/><circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg></button>
-        </div>
+        <div id="moodWrap"></div>
       </div>
       <div class="fu fu3" id="metricSec">
         <div class="mcard">
@@ -391,7 +440,12 @@ input,select,textarea{font-size:16px!important;}
         </div>
       </div>
       <div id="jOpenView" style="display:none">
+        <div class="jseg">
+          <button class="jseg-btn on" id="jSegEntries" onclick="setJournalMode('entries')">Entries</button>
+          <button class="jseg-btn" id="jSegArchive" onclick="setJournalMode('archive')">Archive</button>
+        </div>
         <div id="jList"></div>
+        <div id="jArchiveList" style="display:none"></div>
         <div style="padding:0 24px 24px">
           <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="lockJ()">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="margin-right:6px;vertical-align:middle;pointer-events:none"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Lock
@@ -399,7 +453,7 @@ input,select,textarea{font-size:16px!important;}
         </div>
       </div>
       <div id="jEmptyView" style="display:none">
-        <div class="empty"><div class="empty-ico">📖</div><div class="empty-ttl">No entries yet</div><div class="empty-sub">Write on the Home tab. Sealed days appear here, protected by your PIN.</div></div>
+        <div class="empty"><div class="empty-ttl">No entries yet</div><div class="empty-sub">Write on the Home tab. Sealed days appear here, protected by your PIN.</div></div>
       </div>
     </div>
 
@@ -412,18 +466,9 @@ input,select,textarea{font-size:16px!important;}
         <button class="tchip" onclick="setPer('90',this)">90 Days</button>
         <button class="tchip" onclick="setPer('all',this)">All Time</button>
       </div>
+      <div class="chart-tip" id="dataHint" style="padding:0 24px 14px">Tap any point or block to inspect the logged date and value.</div>
       <div id="dataCharts"></div>
-      <div id="hmWrap" style="display:none">
-        <div class="hm-wrap"><div class="hm-card">
-          <div class="hm-hdr"><span class="slbl" id="hmLabel" style="font-size:10px">Mood — Last 90 Days</span></div>
-          <div class="hm-grid" id="hmGrid"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
-            <span style="font-size:10px;color:var(--sub2)">today</span>
-            <div class="hm-legend" style="margin-top:0"><span style="font-size:10px;color:var(--sub2)">Low</span><div class="hm-lc" style="background:var(--m1)"></div><div class="hm-lc" style="background:var(--m2)"></div><div class="hm-lc" style="background:var(--m3)"></div><div class="hm-lc" style="background:var(--m4)"></div><div class="hm-lc" style="background:var(--m5)"></div><span style="font-size:10px;color:var(--sub2)">High</span></div>
-            <span style="font-size:10px;color:var(--sub2)">oldest</span>
-          </div>
-        </div></div>
-      </div>
+      <div id="hmWrap" style="display:none"></div>
     </div>
 
     <!-- SETTINGS -->
@@ -432,6 +477,7 @@ input,select,textarea{font-size:16px!important;}
       <div class="sg"><div class="sg-lbl">Tracked Metrics</div><div class="scard" id="sMetrics"></div></div>
       <div class="sg"><div class="sg-lbl">Tracking Options</div><div class="scard">
         <div class="srow"><span class="srow-lbl">Mood Tracking</span><button class="tog" id="moodTog" onclick="togMood()"></button></div>
+        <div class="srow disabled" id="compMoodRow"><span class="srow-lbl">Comprehensive Mood Tracking</span><button class="tog" id="compMoodTog" onclick="togCompMood()"></button></div>
         <div class="srow"><span class="srow-lbl">Streaks</span><button class="tog" id="strkTog" onclick="togStrk()"></button></div>
       </div></div>
       <div class="sg"><div class="sg-lbl">Appearance</div><div class="scard">
@@ -443,8 +489,10 @@ input,select,textarea{font-size:16px!important;}
       </div></div>
       <div class="sg"><div class="sg-lbl">Data</div><div class="scard">
         <div class="srow" onclick="exportData()" style="cursor:pointer"><span class="srow-lbl">Export data</span></div>
+        <div class="srow" onclick="openImportData()" style="cursor:pointer"><span class="srow-lbl">Import data</span></div>
         <div class="srow danger" onclick="doDelete()" style="cursor:pointer"><span class="srow-lbl">Delete all data</span></div>
       </div></div>
+      <input id="importDataInput" type="file" accept="application/json,.json" style="display:none" onchange="handleImportData(event)">
     </div>
 
   </div>
@@ -564,6 +612,12 @@ input,select,textarea{font-size:16px!important;}
       <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Close</button>
     </div>
 
+    <div id="scr-data-point" style="display:none">
+      <div class="mtitle" id="dpTitle"></div>
+      <div id="dpBody"></div>
+      <button class="btn btn-ghost" style="height:46px;font-size:14px" onclick="closeModal()">Close</button>
+    </div>
+
     <!-- DELETE STAT CONFIRM -->
     <div id="scr-del-stat" style="display:none">
       <div class="mtitle">Remove metric?</div>
@@ -592,17 +646,23 @@ var BUILTIN = [
   {id:'weight', name:'Weight',   icon:'', unit:'lbs'},
   {id:'protein',name:'Protein',  icon:'', unit:'g'},
   {id:'calories',name:'Calories',icon:'', unit:'kcal'},
-  {id:'steps',  name:'Steps',    icon:'', unit:'steps'},
   {id:'exercise',name:'Exercise',icon:'', unit:'min'}
 ];
+var LEGACY_META = {
+  steps:{id:'steps',name:'Steps',icon:'',unit:'steps'}
+};
 var ML  = {1:'Rough', 2:'Low', 3:'Okay', 4:'Good', 5:'Great'};
 var MC  = ['', '#c05555', '#c4875a', '#c4a84a', '#6ba86b', '#1f5c3a'];
 
 var S = {
   pin:null, rq:null, ra:null,
   metrics:['sleep','weight'],
+  metricAddedAt:{},
+  goalStartedAt:{},
+  moodStartedAt:null,
+  comprehensiveMoodStartedAt:null,
   customStats:[], goals:{},
-  moodOn:true, streaksOn:true, lightMode:true,
+  moodOn:true, comprehensiveMoodOn:false, streaksOn:true, lightMode:true,
   days:{}, draft:''
 };
 
@@ -613,14 +673,34 @@ var jUnlocked   = false;
 
 var ALL_SCREENS = [
   'scr-seal','scr-unlock','scr-verify','scr-pin','scr-recovery',
-  'scr-forgot','scr-goal','scr-custom','scr-del-stat','scr-day-detail'
+  'scr-forgot','scr-goal','scr-custom','scr-del-stat','scr-day-detail','scr-data-point'
 ];
 
-function allM(){ return BUILTIN.concat(S.customStats||[]); }
-function getMeta(id){ return allM().find(function(m){ return m.id===id; }); }
+function allM(){
+  var base=BUILTIN.concat(S.customStats||[]);
+  Object.keys(LEGACY_META).forEach(function(id){
+    if((S.metrics||[]).indexOf(id)>-1 && !base.find(function(m){ return m.id===id; })){
+      base.push(LEGACY_META[id]);
+    }
+  });
+  return base;
+}
+function getMeta(id){ return allM().find(function(m){ return m.id===id; }) || LEGACY_META[id] || null; }
 function tk(){ var d=new Date(); return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate()); }
 function p2(n){ return String(n).padStart(2,'0'); }
-function gd(k){ if(!S.days[k]) S.days[k]={entries:[],metrics:{},mood:null,sealed:false}; return S.days[k]; }
+function gd(k){
+  if(!S.days[k]) S.days[k]={entries:[],metrics:{},mood:null,moodEarly:null,moodOverall:null,sealed:false};
+  if(!S.days[k].entries) S.days[k].entries=[];
+  if(!S.days[k].metrics) S.days[k].metrics={};
+  if(typeof S.days[k].moodEarly==='undefined') S.days[k].moodEarly=null;
+  if(typeof S.days[k].moodOverall==='undefined') S.days[k].moodOverall=S.days[k].mood||null;
+  S.days[k].entries=S.days[k].entries.map(function(entry){
+    if(typeof entry==='string') return {text:entry,time:new Date().toISOString(),archived:false};
+    if(typeof entry.archived==='undefined') entry.archived=false;
+    return entry;
+  });
+  return S.days[k];
+}
 function save(){ try{ localStorage.setItem('solio1', JSON.stringify(S)); }catch(e){} }
 function load(){
   try{
@@ -629,13 +709,116 @@ function load(){
       var p=JSON.parse(d);
       Object.assign(S,p);
       if(!S.goals) S.goals={};
+      if(!S.goalStartedAt) S.goalStartedAt={};
       if(!S.customStats) S.customStats=[];
+      if(!S.metricAddedAt) S.metricAddedAt={};
+      if(typeof S.moodStartedAt==='undefined') S.moodStartedAt=null;
+      if(typeof S.comprehensiveMoodStartedAt==='undefined') S.comprehensiveMoodStartedAt=null;
+      if(typeof S.comprehensiveMoodOn==='undefined') S.comprehensiveMoodOn=false;
       if(typeof p.lightMode==='undefined') S.lightMode=true;
+      Object.keys(S.days||{}).forEach(function(k){
+        var day=gd(k);
+        if(day.mood!=null && day.moodOverall==null) day.moodOverall=day.mood;
+      });
+      if(S.moodOn && !S.moodStartedAt) S.moodStartedAt=findEarliestMoodDay('mood')||tk();
+      if(S.comprehensiveMoodOn && !S.comprehensiveMoodStartedAt) S.comprehensiveMoodStartedAt=findEarliestMoodDay('moodEarly')||findEarliestMoodDay('moodOverall')||tk();
+      (S.metrics||[]).forEach(function(mid){
+        if(!S.metricAddedAt[mid]){
+          S.metricAddedAt[mid]=findEarliestMetricDay(mid)||tk();
+        }
+      });
     }
   }catch(e){}
 }
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+function fmtDateKey(k){
+  var pts=k.split('-');
+  return MONS[parseInt(pts[1],10)-1]+' '+parseInt(pts[2],10)+', '+pts[0];
+}
+function fmtShortDateKey(k){
+  var pts=k.split('-');
+  return parseInt(pts[1],10)+'/'+parseInt(pts[2],10);
+}
+function dateFromKey(k){
+  var pts=k.split('-');
+  return new Date(parseInt(pts[0],10), parseInt(pts[1],10)-1, parseInt(pts[2],10));
+}
+function isAfterNoon(){ return new Date().getHours()>=12; }
+function getActiveEntries(day){ return (day.entries||[]).filter(function(e){ return !e.archived; }); }
+function getArchivedEntries(day){ return (day.entries||[]).filter(function(e){ return e.archived; }); }
+function archiveAllEntriesForDay(k){
+  var day=gd(k), changed=false;
+  day.entries.forEach(function(entry){
+    if(!entry.archived){ entry.archived=true; changed=true; }
+  });
+  if(changed){ save(); renderJournal(); renderData(); toast('Entries archived'); }
+}
+function getMoodValue(day,key){
+  if(key==='moodEarly') return day.moodEarly;
+  if(key==='moodOverall') return day.moodOverall!=null?day.moodOverall:day.mood;
+  return day.moodOverall!=null?day.moodOverall:day.mood;
+}
+function getMoodSummary(day){
+  if(S.comprehensiveMoodOn){
+    var parts=[];
+    if(getMoodValue(day,'moodEarly')!=null) parts.push('Early: '+ML[getMoodValue(day,'moodEarly')]);
+    if(getMoodValue(day,'moodOverall')!=null) parts.push('Overall: '+ML[getMoodValue(day,'moodOverall')]);
+    return parts.join(' • ');
+  }
+  var mood=getMoodValue(day,'mood');
+  return mood!=null?ML[mood]:'';
+}
+function findEarliestMetricDay(mid){
+  var earliest=null;
+  Object.keys(S.days||{}).sort().forEach(function(k){
+    var day=gd(k);
+    if(day.metrics&&day.metrics[mid]!=null&&earliest===null) earliest=k;
+  });
+  return earliest;
+}
+function findEarliestMoodDay(key){
+  var earliest=null;
+  Object.keys(S.days||{}).sort().forEach(function(k){
+    var day=gd(k);
+    if(getMoodValue(day,key)!=null && earliest===null) earliest=k;
+  });
+  return earliest;
+}
+function getMetricStartKey(mid){
+  var custom=(S.customStats||[]).find(function(cs){ return cs.id===mid; });
+  if(S.metricAddedAt&&S.metricAddedAt[mid]) return S.metricAddedAt[mid];
+  if(custom&&custom.createdAt) return custom.createdAt;
+  var earliest=findEarliestMetricDay(mid);
+  return earliest||tk();
+}
+function getGoalStartKey(mid){
+  if(S.goalStartedAt&&S.goalStartedAt[mid]) return S.goalStartedAt[mid];
+  return getMetricStartKey(mid);
+}
+function getCompletionStartKey(mid){
+  return getMetricStartKey(mid);
+}
+function getMoodStartKey(key){
+  if(key==='moodEarly' || key==='moodOverall'){
+    return S.comprehensiveMoodStartedAt || findEarliestMoodDay(key) || S.moodStartedAt || tk();
+  }
+  return S.moodStartedAt || findEarliestMoodDay('mood') || tk();
+}
+function daysBetweenKeys(startKey, endKey){
+  var start=dateFromKey(startKey), end=dateFromKey(endKey);
+  return Math.max(0, Math.round((end-start)/86400000));
+}
+function isCustomMetric(mid){
+  return !!(S.customStats||[]).find(function(cs){ return cs.id===mid; });
+}
+function getDaysFrom(startKey){
+  var start=dateFromKey(startKey), end=new Date(), days=[];
+  for(var d=new Date(start);d<=end;d.setDate(d.getDate()+1)){
+    days.push(d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate()));
+  }
+  return days;
+}
 
 // ─── MODAL SYSTEM ───────────────────────────────────────────────
 var currentScreen  = null;
@@ -746,8 +929,7 @@ function renderHome(){
   document.getElementById('homeGreet').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
   document.getElementById('jta').value=S.draft||'';
   document.getElementById('moodCard').style.display=S.moodOn?'':'none';
-  var day=gd(tk());
-  if(S.moodOn&&day.mood) setMood(day.mood,true);
+  if(S.moodOn) renderMoodCard();
   updateSealUI(); renderMetrics(); renderEntries();
 }
 
@@ -803,13 +985,18 @@ function onAdd(){
 
 function renderEntries(){
   var day=gd(tk()), list=document.getElementById('entryList');
-  if(!day.entries.length){ list.innerHTML=''; return; }
+  var entries=getActiveEntries(day);
+  if(!entries.length){
+    list.innerHTML='<div style="padding:16px 18px;font-size:13px;color:var(--sub);text-align:center">No entries yet</div>';
+    return;
+  }
   if(homeSealed){
     list.innerHTML='<div style="padding:16px 18px;font-size:13px;color:var(--sub);text-align:center">Entries are sealed</div>';
     return;
   }
   list.innerHTML='';
   day.entries.forEach(function(e,idx){
+    if(e.archived) return;
     var d=new Date(e.time), t=d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
     var row=document.createElement('div'); row.className='erow';
     var body=document.createElement('div'); body.className='erow-body';
@@ -839,12 +1026,73 @@ function huK(k){
   }
 }
 function huKd(){ huPv=huPv.slice(0,-1); updD('hud',huPv); }
-
-function setMood(n,silent){
-  gd(tk()).mood=n;
-  document.querySelectorAll('.mface').forEach(function(f){ f.classList.toggle('on',parseInt(f.dataset.v)===n); });
-  document.getElementById('moodLbl').textContent=ML[n]||'';
+function renderMoodCard(){
+  var day=gd(tk()), wrap=document.getElementById('moodWrap');
+  if(!wrap) return;
+  wrap.innerHTML='';
+  var sections=S.comprehensiveMoodOn
+    ? [{key:'moodEarly',label:'Early Mood',note:'How the day started.'}]
+    : [{key:'mood',label:'Mood',note:'How today feels overall.'}];
+  if(S.comprehensiveMoodOn && isAfterNoon()){
+    sections.push({key:'moodOverall',label:'Day Overall',note:'Available after 12:00 PM.'});
+  }
+  sections.forEach(function(section){
+    var block=document.createElement('div');
+    block.className='mood-section';
+    var copy=document.createElement('div');
+    copy.className='mood-copy';
+    var label=document.createElement('span');
+    label.className='mood-name';
+    label.textContent=section.label;
+    var note=document.createElement('span');
+    note.className='mood-note';
+    var current=getMoodValue(day,section.key);
+    note.textContent=current?ML[current]:section.note;
+    copy.appendChild(label);
+    copy.appendChild(note);
+    block.appendChild(copy);
+    var faces=document.createElement('div');
+    faces.className='mood-faces';
+    for(var i=1;i<=5;i++){
+      var btn=document.createElement('button');
+      btn.className='mface'+(current===i?' on':'');
+      btn.dataset.v=String(i);
+      btn.onclick=(function(key,val){ return function(){ setMoodValue(key,val); }; })(section.key,i);
+      btn.innerHTML='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/>'+(i===1?'<path d="M8 16c.5-1.5 2-2.5 4-2.5s3.5 1 4 2.5"/>':i===2?'<path d="M8.5 15.5c.8-1.2 2-1.5 3.5-1.5s2.7.3 3.5 1.5"/>':i===3?'<line x1="9" y1="15" x2="15" y2="15"/>':i===4?'<path d="M8.5 14c.8 1.2 2 2 3.5 2s2.7-.8 3.5-2"/>':'<path d="M8 13.5c.5 1.5 2 2.5 4 2.5s3.5-1 4-2.5"/>')+'<circle cx="9" cy="10" r=".8" class="eye"/><circle cx="15" cy="10" r=".8" class="eye"/></svg>';
+      faces.appendChild(btn);
+    }
+    block.appendChild(faces);
+    wrap.appendChild(block);
+  });
+  if(S.comprehensiveMoodOn && !isAfterNoon()){
+    var later=document.createElement('div');
+    later.className='mood-note';
+    later.textContent='Day Overall unlocks after 12:00 PM in your time zone.';
+    wrap.appendChild(later);
+  }
+  var labelText;
+  if(!S.comprehensiveMoodOn){
+    labelText=getMoodValue(day,'mood')?ML[getMoodValue(day,'mood')]:'Not set';
+  } else {
+    var early=getMoodValue(day,'moodEarly');
+    var overall=getMoodValue(day,'moodOverall');
+    if(early&&overall) labelText='Early '+ML[early]+' • Overall '+ML[overall];
+    else if(early) labelText='Early '+ML[early];
+    else if(overall) labelText='Overall '+ML[overall];
+    else labelText='Not set';
+  }
+  document.getElementById('moodLbl').textContent=labelText;
+}
+function setMoodValue(key,n,silent){
+  var day=gd(tk());
+  if(key==='moodEarly') day.moodEarly=n;
+  else {
+    day.moodOverall=n;
+    day.mood=n;
+  }
   if(!silent) save();
+  renderMoodCard();
+  renderData();
 }
 
 function renderMetrics(){
@@ -903,8 +1151,8 @@ function renderMetrics(){
   }
   grid.innerHTML=''; grid.appendChild(wrapper);
 }
-function saveMetric(mid,v){ gd(tk()).metrics[mid]=v?parseFloat(v):null; save(); }
-function togCheck(mid){ var day=gd(tk()); day.metrics[mid]=day.metrics[mid]===1?null:1; save(); renderMetrics(); }
+function saveMetric(mid,v){ gd(tk()).metrics[mid]=v?parseFloat(v):null; save(); renderData(); }
+function togCheck(mid){ var day=gd(tk()); day.metrics[mid]=day.metrics[mid]===1?null:1; save(); renderMetrics(); renderData(); }
 function getStreak(mid){
   var s=0, d=new Date();
   for(var i=0;i<365;i++){
@@ -918,85 +1166,155 @@ function getStreak(mid){
 }
 
 // ─── JOURNAL TAB ────────────────────────────────────────────────
-var jPv='';
+var jPv='', journalMode='entries';
 function renderJournal(){
   var today=tk();
-  var todayDay=S.days[today];
-  var todayHasEntries=todayDay&&todayDay.entries.length>0;
-  var sealed=Object.keys(S.days).filter(function(k){ return S.days[k].sealed&&S.days[k].entries.length; }).sort().reverse();
+  var todayDay=gd(today);
+  var todayHasEntries=getActiveEntries(todayDay).length>0;
+  var sealed=Object.keys(S.days).filter(function(k){
+    var day=gd(k);
+    return day.sealed&&getActiveEntries(day).length>0;
+  }).sort().reverse();
+  var archivedCount=Object.keys(S.days).reduce(function(total,k){ return total+getArchivedEntries(gd(k)).length; },0);
+  document.getElementById('jSegArchive').textContent=archivedCount?'Archive ('+archivedCount+')':'Archive';
   var lk=document.getElementById('jLockView'), op=document.getElementById('jOpenView'), em=document.getElementById('jEmptyView');
-  var hasAny=sealed.length||todayHasEntries;
+  var hasAny=sealed.length||todayHasEntries||archivedCount;
   if(!hasAny){ lk.style.display='none'; op.style.display='none'; em.style.display=''; return; }
   if(!S.pin||jUnlocked){
     lk.style.display='none'; op.style.display=''; em.style.display='none';
     buildJList(sealed, todayHasEntries?today:null);
+    renderArchiveList();
+    if(!(sealed.length||todayHasEntries) && archivedCount) journalMode='archive';
+    setJournalMode(journalMode, true);
   } else {
     lk.style.display=''; op.style.display='none'; em.style.display='none';
     jPv=''; updD('jpd',jPv);
   }
 }
 
+function setJournalMode(mode, silent){
+  journalMode=mode;
+  document.getElementById('jSegEntries').classList.toggle('on',mode==='entries');
+  document.getElementById('jSegArchive').classList.toggle('on',mode==='archive');
+  document.getElementById('jList').style.display=mode==='entries'?'':'none';
+  document.getElementById('jArchiveList').style.display=mode==='archive'?'':'none';
+  if(!silent && mode==='archive') renderArchiveList();
+}
+
 function buildJList(keys, todayKey){
-  var MNS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var list=document.getElementById('jList'); list.innerHTML='';
   if(todayKey){
-    var td=S.days[todayKey], tpts=todayKey.split('-');
-    var tds=MNS[parseInt(tpts[1])-1]+' '+parseInt(tpts[2])+', '+tpts[0];
+    var td=gd(todayKey);
+    var activeToday=getActiveEntries(td);
     var div=document.createElement('div'); div.className='jentry today';
     div.style.cursor='pointer'; div.dataset.k=todayKey;
     div.onclick=function(e){ if(!e.target.classList.contains('jentry-del')) openDayDetail(this.dataset.k); };
     var hdr=document.createElement('div'); hdr.className='jentry-hdr';
-    var ds=document.createElement('span'); ds.className='jentry-date'; ds.textContent=tds;
+    var ds=document.createElement('span'); ds.className='jentry-date'; ds.textContent=fmtDateKey(todayKey);
+    hdr.appendChild(ds);
+    var meta=document.createElement('div'); meta.className='jentry-meta';
     var badge=document.createElement('span'); badge.className='jentry-badge';
-    badge.innerHTML='<span style="color:var(--acc);font-weight:600">Today</span> &middot; '+td.entries.length+(td.entries.length===1?' entry':' entries');
-    hdr.appendChild(ds); hdr.appendChild(badge);
+    badge.innerHTML='<span style="color:var(--acc);font-weight:600">Today</span> &middot; '+activeToday.length+(activeToday.length===1?' entry':' entries');
+    meta.appendChild(badge);
     var prev=document.createElement('div'); prev.className='jprev open';
-    prev.textContent=td.entries.map(function(e){ return e.text; }).join(' — ');
-    div.appendChild(hdr); div.appendChild(prev); list.appendChild(div);
+    prev.textContent=activeToday.map(function(e){ return e.text; }).join(' — ');
+    var todayCta=document.createElement('div');
+    todayCta.className='jentry-cta';
+    var todayArchiveBtn=document.createElement('button');
+    todayArchiveBtn.className='jentry-actbtn';
+    todayArchiveBtn.textContent='Archive Entries';
+    todayArchiveBtn.onclick=function(e){ e.stopPropagation(); archiveAllEntriesForDay(todayKey); };
+    todayCta.appendChild(todayArchiveBtn);
+    div.appendChild(hdr); div.appendChild(meta); div.appendChild(prev); div.appendChild(todayCta); list.appendChild(div);
   }
   keys.forEach(function(k){
-    var day=S.days[k], pts=k.split('-');
-    var ds=MNS[parseInt(pts[1])-1]+' '+parseInt(pts[2])+', '+pts[0];
-    var mb=day.mood?['','😣','😟','😐','🙂','😊'][day.mood]+' ':'';
-    var preview=day.entries.map(function(e){ return e.text; }).join(' — ');
+    var day=gd(k), visibleEntries=getActiveEntries(day);
+    if(!visibleEntries.length) return;
     var card=document.createElement('div'); card.className='jentry';
     var hdr=document.createElement('div'); hdr.className='jentry-hdr';
-    var dateEl=document.createElement('span'); dateEl.className='jentry-date'; dateEl.textContent=ds;
+    var dateEl=document.createElement('span'); dateEl.className='jentry-date'; dateEl.textContent=fmtDateKey(k);
     dateEl.dataset.k=k;
     dateEl.onclick=function(){ openDayDetail(this.dataset.k); };
+    hdr.appendChild(dateEl);
+    var meta=document.createElement('div'); meta.className='jentry-meta';
     var badgeEl=document.createElement('span'); badgeEl.className='jentry-badge';
-    badgeEl.textContent=mb+day.entries.length+(day.entries.length===1?' entry':' entries');
+    badgeEl.textContent=visibleEntries.length+(visibleEntries.length===1?' entry':' entries');
+    meta.appendChild(badgeEl);
+    var actions=document.createElement('div');
+    actions.className='jentry-actions';
     var delEl=document.createElement('button'); delEl.className='jentry-del'; delEl.innerHTML='&times;';
     delEl.dataset.k=k;
     delEl.onclick=function(e){ e.stopPropagation(); delEntry(this.dataset.k); };
-    hdr.appendChild(dateEl); hdr.appendChild(badgeEl); hdr.appendChild(delEl);
-    var prevEl=document.createElement('div'); prevEl.className='jprev'; prevEl.id='jp-'+k;
-    prevEl.textContent=preview;
-    card.appendChild(hdr); card.appendChild(prevEl); list.appendChild(card);
+    actions.appendChild(delEl);
+    meta.appendChild(actions);
+    var prevEl=document.createElement('div'); prevEl.className='jprev';
+    prevEl.textContent=visibleEntries.map(function(e){ return e.text; }).join(' — ');
+    var cta=document.createElement('div');
+    cta.className='jentry-cta';
+    var archiveBtn=document.createElement('button');
+    archiveBtn.className='jentry-actbtn';
+    archiveBtn.textContent='Archive Entries';
+    archiveBtn.onclick=function(e){ e.stopPropagation(); archiveAllEntriesForDay(k); };
+    cta.appendChild(archiveBtn);
+    card.appendChild(hdr); card.appendChild(meta); card.appendChild(prevEl); card.appendChild(cta); list.appendChild(card);
+  });
+  if(!list.innerHTML){
+    list.innerHTML='<div class="jarchive-empty">No active journal entries here. Open Archive to restore older entries.</div>';
+  }
+}
+
+function renderArchiveList(){
+  var list=document.getElementById('jArchiveList');
+  if(!list) return;
+  list.innerHTML='';
+  var groups=Object.keys(S.days).sort().reverse().filter(function(k){ return getArchivedEntries(gd(k)).length>0; });
+  if(!groups.length){
+    list.innerHTML='<div class="jarchive-empty">Archived entries will appear here.</div>';
+    return;
+  }
+  groups.forEach(function(k){
+    var archived=getArchivedEntries(gd(k));
+    archived.forEach(function(entry,idx){
+      var card=document.createElement('div');
+      card.className='jarchive-entry';
+      var meta=document.createElement('div');
+      meta.className='jarchive-meta';
+      var left=document.createElement('div');
+      left.innerHTML='<div class="jentry-date" style="cursor:default">'+fmtDateKey(k)+'</div><div class="jarchive-time">'+new Date(entry.time).toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"})+'</div>';
+      var btn=document.createElement('button');
+      btn.className='jentry-actbtn';
+      btn.textContent='Unarchive';
+      btn.onclick=function(){ unarchiveJournalEntry(k, entry.time); };
+      meta.appendChild(left);
+      var text=document.createElement('div');
+      text.className='jarchive-text';
+      text.textContent=entry.text;
+      var cta=document.createElement('div');
+      cta.className='jentry-cta';
+      cta.style.marginTop='12px';
+      cta.appendChild(btn);
+      card.appendChild(meta);
+      card.appendChild(text);
+      card.appendChild(cta);
+      list.appendChild(card);
+    });
   });
 }
 
-function delEntry(k){
-  if(!S.days[k]) return;
-  if(!confirm('Delete this day\'s entries?')) return;
-  delete S.days[k];
-  save(); renderJournal();
-}
-
 function openDayDetail(k){
-  var day=S.days[k]; if(!day) return;
-  var pts=k.split('-');
-  var MNS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  document.getElementById('ddTitle').textContent=MNS[parseInt(pts[1])-1]+' '+parseInt(pts[2])+', '+pts[0];
+  var day=gd(k); if(!day) return;
+  document.getElementById('ddTitle').textContent=fmtDateKey(k);
 
   var eWrap=document.getElementById('ddEntries');
   eWrap.innerHTML='';
-  if(day.entries&&day.entries.length){
+  var activeEntries=getActiveEntries(day);
+  if(activeEntries.length){
     var elbl=document.createElement('div');
     elbl.style.cssText='font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--sub2);margin-bottom:8px';
     elbl.textContent='Entries';
     eWrap.appendChild(elbl);
-    day.entries.forEach(function(e){
+    day.entries.forEach(function(e,idx){
+      if(e.archived) return;
       var d=new Date(e.time);
       var t=d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
       var row=document.createElement('div');
@@ -1007,34 +1325,56 @@ function openDayDetail(k){
       var txt=document.createElement('div');
       txt.style.cssText='font-family:Lora,serif;font-size:14px;color:var(--text);line-height:1.6';
       txt.textContent=e.text;
-      row.appendChild(tEl); row.appendChild(txt);
+      row.appendChild(tEl);
+      row.appendChild(txt);
+      var archiveBtn=document.createElement('button');
+      archiveBtn.className='jentry-actbtn';
+      archiveBtn.style.marginTop='10px';
+      archiveBtn.textContent='Archive';
+      archiveBtn.onclick=function(){ archiveJournalEntry(k, idx); };
+      row.appendChild(archiveBtn);
       eWrap.appendChild(row);
     });
+  } else {
+    eWrap.innerHTML='<div style="font-size:13px;color:var(--sub);padding:4px 0 2px">No active journal entries for this day.</div>';
   }
 
   var mWrap=document.getElementById('ddMetrics');
   mWrap.innerHTML='';
   var cells=[];
+  if(getMoodValue(day,'moodEarly')!=null){
+    var earlyMood=getMoodValue(day,'moodEarly');
+    var mc=document.createElement('div');
+    mc.style.cssText='background:var(--card2);border-radius:10px;padding:10px 12px';
+    mc.innerHTML='<div style="font-size:10px;color:var(--sub2);margin-bottom:4px">Early Mood</div>'
+      +'<div style="font-size:15px;font-family:Lora,serif;color:'+(MC[earlyMood]||'var(--acc)')+';font-weight:500">'+(ML[earlyMood]||'')+'</div>';
+    cells.push(mc);
+  }
+  if(getMoodValue(day,'moodOverall')!=null || day.mood!=null){
+    var overallMood=getMoodValue(day,'moodOverall');
+    var oc=document.createElement('div');
+    oc.style.cssText='background:var(--card2);border-radius:10px;padding:10px 12px';
+    oc.innerHTML='<div style="font-size:10px;color:var(--sub2);margin-bottom:4px">'+(S.comprehensiveMoodOn?'Day Overall':'Mood')+'</div>'
+      +'<div style="font-size:15px;font-family:Lora,serif;color:'+(MC[overallMood]||'var(--acc)')+';font-weight:500">'+(ML[overallMood]||'')+'</div>';
+    cells.push(oc);
+  }
   if(day.metrics){
     allM().forEach(function(m){
       var v=day.metrics[m.id]; if(v==null) return;
-      var valStr=v===1?'Done':v;
+      var isCompletionMetric=!!((S.goals&&S.goals[m.id])||isCustomMetric(m.id));
+      var isDone=v===1;
+      var isNotDone=isCompletionMetric&&!isDone;
+      var valStr=isDone?'Done':(isNotDone?'Not Done':v);
       var unitStr=v===1?'':m.unit;
+      var valColor=isDone?'var(--acc)':(isNotDone?'var(--red)':'var(--acc)');
       var cell=document.createElement('div');
       cell.style.cssText='background:var(--card2);border-radius:10px;padding:10px 12px';
       cell.innerHTML='<div style="font-size:10px;color:var(--sub2);margin-bottom:4px">'+m.name+'</div>'
-        +'<div style="font-size:15px;font-family:Lora,serif;color:var(--acc);font-weight:500">'+valStr
+        +'<div style="font-size:15px;font-family:Lora,serif;color:'+valColor+';font-weight:500">'+valStr
         +(unitStr?'<span style="font-size:10px;color:var(--sub2);margin-left:3px">'+unitStr+'</span>':'')
         +'</div>';
       cells.push(cell);
     });
-  }
-  if(day.mood){
-    var mc=document.createElement('div');
-    mc.style.cssText='background:var(--card2);border-radius:10px;padding:10px 12px';
-    mc.innerHTML='<div style="font-size:10px;color:var(--sub2);margin-bottom:4px">Mood</div>'
-      +'<div style="font-size:15px;font-family:Lora,serif;color:var(--acc);font-weight:500">'+(ML[day.mood]||'')+'</div>';
-    cells.push(mc);
   }
   if(cells.length){
     var mlbl=document.createElement('div');
@@ -1047,6 +1387,109 @@ function openDayDetail(k){
     mWrap.appendChild(g);
   }
   openModal('scr-day-detail');
+}
+
+function archiveJournalEntry(k, idx){
+  var day=gd(k);
+  if(!day.entries[idx]) return;
+  day.entries[idx].archived=true;
+  save();
+  renderJournal();
+  openDayDetail(k);
+  toast('Entry archived');
+}
+
+function unarchiveJournalEntry(k, time){
+  var day=gd(k);
+  day.entries.forEach(function(entry){
+    if(entry.time===time) entry.archived=false;
+  });
+  save();
+  renderJournal();
+  setJournalMode('archive', true);
+  toast('Entry restored');
+}
+
+function delEntry(k){
+  if(!S.days[k]) return;
+  if(!confirm('Delete this day\'s entries and health data?')) return;
+  delete S.days[k];
+  save(); renderJournal(); renderData();
+}
+
+function openDataPointModal(title, bodyHtml){
+  document.getElementById('dpTitle').textContent=title;
+  document.getElementById('dpBody').innerHTML=bodyHtml;
+  openModal('scr-data-point');
+}
+
+function getMetricDisplayValue(meta, value){
+  if(value==null) return 'No data logged';
+  if(value===1) return 'Completed';
+  return esc(String(value))+(meta&&meta.unit?' '+esc(meta.unit):'');
+}
+
+function buildDayDataRows(k, primary){
+  var day=gd(k), rows=[], seen={};
+  function addRow(key, label, value, isPrimary){
+    if(seen[key]) return;
+    seen[key]=1;
+    rows.push({
+      key:key,
+      label:label,
+      value:value,
+      primary:!!isPrimary
+    });
+  }
+
+  if(primary.type==='metric'){
+    var primaryMeta=getMeta(primary.key);
+    addRow('metric:'+primary.key, primaryMeta?primaryMeta.name:primary.key, getMetricDisplayValue(primaryMeta, day.metrics[primary.key]), true);
+  } else if(primary.type==='mood'){
+    var moodVal=getMoodValue(day, primary.key);
+    addRow('mood:'+primary.key, primary.label, moodVal==null?'No mood logged':esc(ML[moodVal]), true);
+  }
+
+  allM().forEach(function(meta){
+    var value=day.metrics[meta.id];
+    if(value==null) return;
+    addRow('metric:'+meta.id, meta.name, getMetricDisplayValue(meta, value), primary.type==='metric'&&primary.key===meta.id);
+  });
+
+  var moodItems=S.comprehensiveMoodOn
+    ? [{key:'moodEarly',label:'Early Mood'},{key:'moodOverall',label:'Day Overall'}]
+    : [{key:'mood',label:'Mood'}];
+
+  moodItems.forEach(function(item){
+    var moodVal=getMoodValue(day, item.key);
+    if(moodVal==null) return;
+    addRow('mood:'+item.key, item.label, esc(ML[moodVal]), primary.type==='mood'&&primary.key===item.key);
+  });
+
+  if(!rows.length){
+    return '<div class="dchart-empty" style="padding:8px 0">No data logged for this day.</div>';
+  }
+
+  rows.sort(function(a,b){
+    if(a.primary && !b.primary) return -1;
+    if(!a.primary && b.primary) return 1;
+    return 0;
+  });
+
+  return '<div class="dp-rows">'+rows.map(function(row){
+    return '<div class="dp-row'+(row.primary?' primary':'')+'">'
+      +'<div class="dp-row-name">'+esc(row.label)+'</div>'
+      +'<div class="dp-row-val">'+row.value+'</div>'
+      +'</div>';
+  }).join('')+'</div>';
+}
+
+function openMetricPoint(k, mid){
+  openDataPointModal(fmtDateKey(k), buildDayDataRows(k, {type:'metric', key:mid}));
+}
+
+function openMoodPoint(k, label, moodKey){
+  openDataPointModal(fmtDateKey(k), buildDayDataRows(k, {type:'mood', key:moodKey, label:label}));
 }
 
 function jK(k){
@@ -1097,53 +1540,62 @@ var dataPer='week';
 function setPer(p,el){
   dataPer=p;
   document.querySelectorAll('.tchip').forEach(function(c){ c.classList.remove('on'); });
-  el.classList.add('on'); renderData();
+  el.classList.add('on');
+  renderData();
 }
 function renderData(){
   var days=getPerDays(), wrap=document.getElementById('dataCharts');
   if(!S.goals) S.goals={};
+  document.querySelectorAll('.time-row .tchip').forEach(function(btn){ btn.classList.remove('on'); });
+  var perId=dataPer==='week'?0:dataPer==='month'?1:dataPer==='90'?2:3;
+  var perBtns=document.querySelectorAll('.time-row .tchip');
+  if(perBtns[perId]) perBtns[perId].classList.add('on');
+  var hmWrap=document.getElementById('hmWrap');
   var allDays=Object.keys(S.days).sort();
   var periodLabel=dataPer==='week'?'7d avg':dataPer==='month'?'28d avg':dataPer==='90'?'90d avg':'all time avg';
   wrap.innerHTML=S.metrics.map(function(mid){
     var m=getMeta(mid); if(!m) return '';
     var goal=S.goals[mid], hasGoal=!!(goal&&goal.trim());
-    var vals=days.map(function(k){ return S.days[k]?S.days[k].metrics[mid]:null; });
-    var allVals=allDays.map(function(k){ return S.days[k]?S.days[k].metrics[mid]:null; });
+    var useCompletionViz=hasGoal||isCustomMetric(mid);
+    var chartDays=(useCompletionViz&&dataPer==='all')?getDaysFrom(getCompletionStartKey(mid)):days;
+    var allTimeDays=useCompletionViz?getDaysFrom(getCompletionStartKey(mid)):allDays;
+    var vals=chartDays.map(function(k){ return S.days[k]?S.days[k].metrics[mid]:null; });
+    var allVals=allTimeDays.map(function(k){ return S.days[k]?S.days[k].metrics[mid]:null; });
     var def=vals.filter(function(v){ return v!=null&&v!==1; });
     var allDef=allVals.filter(function(v){ return v!=null&&v!==1; });
     var statsHtml;
-    if(hasGoal){
+    if(useCompletionViz){
       var periodDone=vals.filter(function(v){ return v===1; }).length;
       var allDone=allVals.filter(function(v){ return v===1; }).length;
-      statsHtml='<div style="display:flex;gap:12px;align-items:center">'
-        +'<div style="text-align:right"><div style="font-size:10px;color:var(--sub2)">'+periodLabel+'</div>'
-        +'<div style="font-size:14px;font-weight:600;color:var(--text)">'+periodDone+'/'+days.length+'</div></div>'
-        +'<div style="width:1px;height:26px;background:var(--b2)"></div>'
-        +'<div style="text-align:right"><div style="font-size:10px;color:var(--sub2)">all time</div>'
-        +'<div style="font-size:14px;font-weight:600;color:var(--sub)">'+allDone+'/'+allDays.length+'</div></div>'
+      statsHtml='<div class="dchart-stats">'
+        +'<div class="dchart-stat"><div class="dchart-stat-label">'+periodLabel+'</div>'
+        +'<div class="dchart-stat-value">'+periodDone+'/'+chartDays.length+'</div></div>'
+        +'<div class="dchart-divider"></div>'
+        +'<div class="dchart-stat"><div class="dchart-stat-label">all time</div>'
+        +'<div class="dchart-stat-value muted">'+allDone+'/'+allTimeDays.length+'</div></div>'
         +'</div>';
     } else {
       var periodAvg=def.length?(def.reduce(function(a,b){ return a+b; },0)/def.length).toFixed(1):'--';
       var allAvg=allDef.length?(allDef.reduce(function(a,b){ return a+b; },0)/allDef.length).toFixed(1):'--';
-      statsHtml='<div style="display:flex;gap:12px;align-items:center">'
-        +'<div style="text-align:right"><div style="font-size:10px;color:var(--sub2)">'+periodLabel+'</div>'
-        +'<div style="font-size:14px;font-weight:600;color:var(--text)">'+(periodAvg!=='--'?periodAvg+' '+m.unit:'--')+'</div></div>'
-        +'<div style="width:1px;height:26px;background:var(--b2)"></div>'
-        +'<div style="text-align:right"><div style="font-size:10px;color:var(--sub2)">all time</div>'
-        +'<div style="font-size:14px;font-weight:600;color:var(--sub)">'+(allAvg!=='--'?allAvg+' '+m.unit:'--')+'</div></div>'
+      statsHtml='<div class="dchart-stats">'
+        +'<div class="dchart-stat"><div class="dchart-stat-label">'+periodLabel+'</div>'
+        +'<div class="dchart-stat-value">'+(periodAvg!=='--'?periodAvg+' '+m.unit:'--')+'</div></div>'
+        +'<div class="dchart-divider"></div>'
+        +'<div class="dchart-stat"><div class="dchart-stat-label">all time</div>'
+        +'<div class="dchart-stat-value muted">'+(allAvg!=='--'?allAvg+' '+m.unit:'--')+'</div></div>'
         +'</div>';
     }
     return '<div class="dchart"><div class="dchart-hdr"><span class="dchart-name">'+m.name+'</span>'+statsHtml+'</div>'
-      +(hasGoal?mkCheckChart(vals):mkLineChart(vals))+'</div>';
+      +(useCompletionViz?mkMetricBlocks(chartDays, vals, m):mkLineChart(chartDays, vals, m))+'</div>';
   }).join('');
-  document.getElementById('hmWrap').style.display=S.moodOn?'':'none';
-  if(S.moodOn) renderHM();
+  hmWrap.style.display=S.moodOn?'':'none';
+  if(S.moodOn) renderHM(days);
 }
 function getPerDays(){
   if(dataPer==='all'){
     var allKeys=Object.keys(S.days).sort();
     if(!allKeys.length){ return [tk()]; }
-    var start=new Date(allKeys[0]), end=new Date(), days=[];
+    var start=dateFromKey(allKeys[0]), end=new Date(), days=[];
     for(var d=new Date(start);d<=end;d.setDate(d.getDate()+1)){
       days.push(d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate()));
     }
@@ -1153,8 +1605,64 @@ function getPerDays(){
   for(var i=n-1;i>=0;i--){ var dd=new Date(d); dd.setDate(d.getDate()-i); days.push(dd.getFullYear()+'-'+p2(dd.getMonth()+1)+'-'+p2(dd.getDate())); }
   return days;
 }
-function mkLineChart(vals){
-  var W=300,H=110,PL=36,PB=18,PT=8,PR=8;
+function tickIndexes(n){
+  if(n<=1) return [0];
+  if(n<=7){
+    var all=[];
+    for(var i=0;i<n;i++) all.push(i);
+    return all;
+  }
+  if(n<=14) return [0,2,4,6,8,10,12,n-1].filter(function(v, i, arr){ return arr.indexOf(v)===i && v<n; });
+  if(n<=31) return [0,7,14,21,n-1].filter(function(v, i, arr){ return arr.indexOf(v)===i && v<n; });
+  var wanted=5, out=[];
+  for(var j=0;j<wanted;j++){
+    var idx=Math.round((j*(n-1))/Math.max(1,wanted-1));
+    if(out.indexOf(idx)===-1) out.push(idx);
+  }
+  return out;
+}
+function orderNewestFirst(days, vals){
+  return days.map(function(day, idx){ return {day:day,val:vals?vals[idx]:null}; }).reverse();
+}
+
+function buildCompletionViz(days, vals, meta){
+  var items=orderNewestFirst(days, vals);
+  if(dataPer==='week' || (dataPer==='all' && items.length<=7)){
+    return '<div class="viz"><div class="comp-week">'+items.map(function(item){
+      var done=item.val===1;
+      return '<button class="comp-pill'+(done?' on':'')+'" onclick="openMetricPoint(\''+item.day+'\',\''+meta.id+'\')" title="'+esc(fmtDateKey(item.day)+' — '+(done?(meta.name+' completed'):('No '+meta.name+' logged')))+'"></button>';
+    }).join('')+'</div></div>';
+  }
+  if(dataPer==='month' || (dataPer==='all' && items.length<=31)){
+    return '<div class="viz"><div class="comp-month" style="--cols:'+items.length+'">'+items.map(function(item){
+      var done=item.val===1;
+      return '<button class="comp-month-pill'+(done?' on':'')+'" onclick="openMetricPoint(\''+item.day+'\',\''+meta.id+'\')" title="'+esc(fmtDateKey(item.day)+' — '+(done?(meta.name+' completed'):('No '+meta.name+' logged')))+'"></button>';
+    }).join('')+'</div></div>';
+  }
+  return '<div class="viz"><div class="comp-long" style="--cols:'+items.length+'">'+items.map(function(item){
+    var done=item.val===1;
+    return '<button class="comp-tick-cell" onclick="openMetricPoint(\''+item.day+'\',\''+meta.id+'\')" title="'+esc(fmtDateKey(item.day)+' — '+(done?(meta.name+' completed'):('No '+meta.name+' logged')))+'"><span class="comp-tick'+(done?' on':'')+'"></span></button>';
+  }).join('')+'</div></div>';
+}
+
+function buildMoodViz(days, key, label){
+  var items=orderNewestFirst(days, days.map(function(k){ return getMoodValue(gd(k), key); }));
+  if(dataPer==='week'){
+    return '<div class="viz"><div class="mood-week">'+items.map(function(item){
+      var mood=item.val;
+      return '<button class="mood-box'+(mood?' on':'')+'" style="background:'+(mood?MC[mood]:'var(--card2)')+'" onclick="openMoodPoint(\''+item.day+'\',\''+label+'\',\''+key+'\')" title="'+esc(fmtDateKey(item.day)+' — '+(mood?ML[mood]:'No mood logged'))+'"><span class="mood-date'+(mood?'':' dim')+'">'+fmtShortDateKey(item.day)+'</span></button>';
+    }).join('')+'</div><div class="mood-legend"><span>today</span><div class="mood-legend-mid"><span>Low</span><span class="mood-swatch" style="background:'+MC[1]+'"></span><span class="mood-swatch" style="background:'+MC[2]+'"></span><span class="mood-swatch" style="background:'+MC[3]+'"></span><span class="mood-swatch" style="background:'+MC[4]+'"></span><span class="mood-swatch" style="background:'+MC[5]+'"></span><span>High</span></div><span>oldest</span></div></div>';
+  }
+  var rows=Math.ceil(items.length/7);
+  while(items.length<rows*7) items.push({day:'',val:null,pad:true});
+  return '<div class="viz"><div class="mood-grid">'+items.map(function(item){
+    if(item.pad) return '<div class="mood-box" style="background:var(--card2);opacity:.55"></div>';
+    var mood=item.val;
+    return '<button class="mood-box'+(mood?' on':'')+'" style="background:'+(mood?MC[mood]:'var(--card2)')+'" onclick="openMoodPoint(\''+item.day+'\',\''+label+'\',\''+key+'\')" title="'+esc(fmtDateKey(item.day)+' — '+(mood?ML[mood]:'No mood logged'))+'"><span class="mood-date'+(mood?'':' dim')+'">'+fmtShortDateKey(item.day)+'</span></button>';
+  }).join('')+'</div><div class="mood-legend"><span>today</span><div class="mood-legend-mid"><span>Low</span><span class="mood-swatch" style="background:'+MC[1]+'"></span><span class="mood-swatch" style="background:'+MC[2]+'"></span><span class="mood-swatch" style="background:'+MC[3]+'"></span><span class="mood-swatch" style="background:'+MC[4]+'"></span><span class="mood-swatch" style="background:'+MC[5]+'"></span><span>High</span></div><span>oldest</span></div></div>';
+}
+function mkLineChart(days, vals, meta){
+  var W=336,H=196,PL=50,PB=46,PT=18,PR=18;
   var def=vals.map(function(v,i){ return {v:v,i:i}; }).filter(function(x){ return x.v!=null; });
   if(!def.length) return '<div class="dchart-empty">No data yet</div>';
   var n=vals.length;
@@ -1163,19 +1671,10 @@ function mkLineChart(vals){
   var yMax=roundUp(rawMax);
   var yTicks=[0,yMax*.25,yMax*.5,yMax*.75,yMax].map(function(v){ return Math.round(v*10)/10; });
   var chartW=W-PL-PR, chartH=H-PT-PB;
-  function xPos(i){ return PL+((i+1)/n)*chartW; }
+  function xPos(i){ return n===1?PL+(chartW/2):PL+(i/(n-1))*chartW; }
   function yPos(v){ return PT+(1-(v/yMax))*chartH; }
-  var revVals=vals.slice().reverse();
-  var revDef=revVals.map(function(v,i){ return {v:v,i:i}; }).filter(function(x){ return x.v!=null; });
-  var tickInterval=dataPer==='week'?1:dataPer==='month'?7:dataPer==='90'?15:Math.max(1,Math.round(n/6));
-  var intervals=[];
-  for(var s2=0;s2<n;s2+=tickInterval){
-    var endI=Math.min(s2+tickInterval-1,n-1);
-    var seg=revDef.filter(function(x){ return x.i>=s2&&x.i<=endI; });
-    var avg=seg.length?seg.reduce(function(a,b){ return a+b.v; },0)/seg.length:null;
-    intervals.push({start:s2,end:endI,avg:avg});
-  }
-  var sv='<svg width="100%" viewBox="0 0 '+W+' '+H+'" style="display:block">';
+  var sv='<svg class="dchart-svg" viewBox="0 0 '+W+' '+H+'">';
+  sv+='<defs><linearGradient id="grad-'+meta.id+'" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="var(--acc)" stop-opacity=".2"/><stop offset="100%" stop-color="var(--acc)" stop-opacity="0"/></linearGradient></defs>';
   yTicks.forEach(function(tick){
     var ty=yPos(tick);
     sv+='<line x1="'+PL+'" y1="'+ty+'" x2="'+(PL+chartW)+'" y2="'+ty+'" stroke="var(--b2)" stroke-width="1" stroke-dasharray="'+(tick===0?'0':'3,4')+'"/>';
@@ -1184,62 +1683,48 @@ function mkLineChart(vals){
   });
   sv+='<line x1="'+PL+'" y1="'+PT+'" x2="'+PL+'" y2="'+(PT+chartH)+'" stroke="var(--sub2)" stroke-width="1"/>';
   sv+='<line x1="'+PL+'" y1="'+(PT+chartH)+'" x2="'+(PL+chartW)+'" y2="'+(PT+chartH)+'" stroke="var(--sub2)" stroke-width="1"/>';
-  sv+='<text x="'+PL+'" y="'+(PT+chartH+11)+'" font-size="7.5" fill="var(--sub2)" text-anchor="middle" font-family="DM Sans,sans-serif">0</text>';
-  var tickDays={};
-  intervals.forEach(function(seg){
-    var tx=xPos(seg.end);
+  tickIndexes(n).forEach(function(idx){
+    var tx=xPos(idx);
     sv+='<line x1="'+tx+'" y1="'+(PT+chartH)+'" x2="'+tx+'" y2="'+(PT+chartH+3)+'" stroke="var(--sub2)" stroke-width="1"/>';
-    sv+='<text x="'+tx+'" y="'+(PT+chartH+11)+'" font-size="7.5" fill="var(--sub2)" text-anchor="middle" font-family="DM Sans,sans-serif">'+(seg.end+1)+'</text>';
-    tickDays[seg.end]=true;
+    sv+='<text x="'+tx+'" y="'+(PT+chartH+13)+'" font-size="7.5" fill="var(--sub2)" text-anchor="middle" font-family="DM Sans,sans-serif">'+fmtShortDateKey(days[idx])+'</text>';
   });
-  var oy2=PT+chartH;
-  var totalCoverage=revDef.length/n;
-  if(revDef.length>1&&totalCoverage>=0.5){
-    intervals.forEach(function(seg){
-      if(seg.avg===null) return;
-      var intervalLen=seg.end-seg.start+1;
-      var dataInSeg=revDef.filter(function(x){ return x.i>=seg.start&&x.i<=seg.end; }).length;
-      if(dataInSeg<Math.ceil(intervalLen/2)) return;
-      var x0=seg.start===0?PL:xPos(seg.start-1);
-      var x1=xPos(seg.end);
-      var ay=yPos(seg.avg);
-      sv+='<polygon points="'+x0+','+oy2+' '+x0+','+ay+' '+x1+','+ay+' '+x1+','+oy2+'" fill="var(--acc)" opacity=".12"/>';
-      sv+='<line x1="'+x0+'" y1="'+ay+'" x2="'+x1+'" y2="'+ay+'" stroke="var(--acc)" stroke-width="1.5" opacity=".35"/>';
-    });
-  }
-  var ox=PL, oy=PT+chartH;
-  var plotPts=revDef.map(function(x){ return {px:xPos(x.i),py:yPos(x.v),i:x.i}; });
-  if(plotPts.length>0){
-    var linePts=ox+','+oy+' '+plotPts.map(function(p){ return p.px+','+p.py; }).join(' ');
-    sv+='<polyline points="'+linePts+'" fill="none" stroke="var(--acc)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>';
-  }
-  var mostRecentI=revDef.length>0?revDef[0].i:-1;
-  revDef.forEach(function(x){
-    if(tickDays[x.i]||x.i===mostRecentI){
-      sv+='<circle cx="'+xPos(x.i)+'" cy="'+yPos(x.v)+'" r="3.5" fill="var(--acc)"/>';
+  var current=[];
+  def.forEach(function(point, idx){
+    current.push(point);
+    var next=def[idx+1];
+    if(!next || next.i!==point.i+1){
+      if(current.length>1){
+        var area='M '+current.map(function(p){ return xPos(p.i)+' '+yPos(p.v); }).join(' L ')+' L '+xPos(current[current.length-1].i)+' '+(PT+chartH)+' L '+xPos(current[0].i)+' '+(PT+chartH)+' Z';
+        sv+='<path d="'+area+'" fill="url(#grad-'+meta.id+')"/>';
+        sv+='<polyline points="'+current.map(function(p){ return xPos(p.i)+','+yPos(p.v); }).join(' ')+'" fill="none" stroke="var(--acc)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>';
+      }
+      current=[];
     }
   });
+  def.forEach(function(x){
+    sv+='<circle class="chart-point" cx="'+xPos(x.i)+'" cy="'+yPos(x.v)+'" r="4.5" fill="var(--acc)" stroke="var(--bg)" stroke-width="2" onclick="openMetricPoint(\''+days[x.i]+'\',\''+meta.id+'\')"/>';
+  });
+  sv+='<text x="'+(PL+chartW/2)+'" y="'+(H-6)+'" font-size="9" fill="var(--sub2)" text-anchor="middle" font-family="DM Sans,sans-serif">Date</text>';
+  sv+='<text x="12" y="'+(PT+chartH/2)+'" font-size="9" fill="var(--sub2)" text-anchor="middle" font-family="DM Sans,sans-serif" transform="rotate(-90 12 '+(PT+chartH/2)+')">'+esc(meta.name+' ('+meta.unit+')')+'</text>';
   sv+='</svg>'; return sv;
 }
-function mkCheckChart(vals){
-  if(!vals.length) return '<div class="dchart-empty">No data yet</div>';
-  var rev=vals.slice().reverse();
-  return '<div style="display:flex;gap:3px">'+rev.map(function(v){
-    return '<div style="flex:1;height:28px;border-radius:5px;background:'+(v===1?'var(--acc)':'var(--card2)')+';opacity:'+(v===1?1:.35)+'"></div>';
-  }).join('')+'</div>';
-}
-function renderHM(){
-  var grid=document.getElementById('hmGrid');
-  var days=getPerDays().slice().reverse();
-  var cols=dataPer==='week'?7:dataPer==='month'?7:9;
-  grid.style.cssText='display:grid;grid-template-columns:repeat('+cols+',1fr);gap:3px;direction:ltr';
-  var n=dataPer==='week'?7:dataPer==='month'?28:dataPer==='90'?90:null;
-  var lbl=document.getElementById('hmLabel');
-  if(lbl) lbl.textContent=n?'Mood \u2014 Last '+n+' Days':'Mood \u2014 All Time';
-  grid.innerHTML=days.map(function(k){
-    var mood=S.days[k]?S.days[k].mood:null;
-    return '<div style="aspect-ratio:1;border-radius:3px;background:'+(mood?MC[mood]:'var(--card2)')+';opacity:'+(mood?.9:.3)+'"></div>';
+function renderHM(days){
+  var wrap=document.getElementById('hmWrap');
+  var labels=S.comprehensiveMoodOn
+    ? [{key:'moodEarly',label:'Early Mood'},{key:'moodOverall',label:'Day Overall'}]
+    : [{key:'mood',label:'Mood'}];
+  wrap.innerHTML=labels.map(function(item){
+    var moodDays=dataPer==='all'?getDaysFrom(getMoodStartKey(item.key)):days;
+    return '<div class="hm-wrap"><div class="hm-card"><div class="hm-hdr"><span class="slbl" style="font-size:10px">'+item.label+' \u2014 '+(dataPer==='all'?'All Time':days.length+' Days')+'</span></div>'
+      +mkMoodStrip(moodDays, item.key, item.label)
+      +'</div></div>';
   }).join('');
+}
+function mkMoodStrip(days, key, label){
+  return buildMoodViz(days, key, label);
+}
+function mkMetricBlocks(days, vals, meta){
+  return buildCompletionViz(days, vals, meta);
 }
 
 // ─── SETTINGS ───────────────────────────────────────────────────
@@ -1250,10 +1735,11 @@ function renderSettings(){
   var grid=document.createElement('div');
   grid.style.cssText='display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b1);border-radius:16px;overflow:hidden';
   var allM2=BUILTIN.concat(S.customStats||[]);
+  if((S.metrics||[]).indexOf('steps')>-1) allM2.push(LEGACY_META.steps);
   allM2.forEach(function(m){
     var on=S.metrics.indexOf(m.id)>-1;
     var goal=S.goals[m.id], hasGoal=!!(goal&&goal.trim());
-    var isCustom=!BUILTIN.find(function(b){ return b.id===m.id; });
+    var isCustom=!!(S.customStats||[]).find(function(cs){ return cs.id===m.id; });
     var cell=document.createElement('div');
     cell.style.cssText='background:var(--card);padding:12px 14px;display:flex;flex-direction:column;gap:10px;min-height:88px';
     var topRow=document.createElement('div');
@@ -1311,16 +1797,35 @@ function renderSettings(){
   container.appendChild(addRow);
   document.getElementById('pinLbl').textContent=S.pin?'Change PIN':'Set PIN';
   document.getElementById('moodTog').classList.toggle('on',S.moodOn);
+  document.getElementById('compMoodTog').classList.toggle('on',S.comprehensiveMoodOn);
+  document.getElementById('compMoodTog').disabled=!S.moodOn;
+  document.getElementById('compMoodRow').classList.toggle('disabled',!S.moodOn);
   document.getElementById('strkTog').classList.toggle('on',S.streaksOn);
   document.getElementById('lightTog').classList.toggle('on',!S.lightMode);
 }
 function togM(mid,btn){
   btn.classList.toggle('on');
-  var i=S.metrics.indexOf(mid); if(i>-1) S.metrics.splice(i,1); else S.metrics.push(mid);
+  var i=S.metrics.indexOf(mid);
+  if(i>-1) S.metrics.splice(i,1);
+  else {
+    S.metrics.push(mid);
+    if(!S.metricAddedAt) S.metricAddedAt={};
+    if(!S.metricAddedAt[mid]) S.metricAddedAt[mid]=tk();
+  }
   save(); renderMetrics();
   setTimeout(renderSettings,350);
 }
-function togMood(){ S.moodOn=!S.moodOn; save(); document.getElementById('moodCard').style.display=S.moodOn?'':'none'; renderSettings(); }
+function togMood(){
+  S.moodOn=!S.moodOn;
+  if(S.moodOn && !S.moodStartedAt) S.moodStartedAt=tk();
+  save(); document.getElementById('moodCard').style.display=S.moodOn?'':'none'; if(S.moodOn) renderMoodCard(); renderSettings(); renderData();
+}
+function togCompMood(){
+  if(!S.moodOn) return;
+  S.comprehensiveMoodOn=!S.comprehensiveMoodOn;
+  if(S.comprehensiveMoodOn && !S.comprehensiveMoodStartedAt) S.comprehensiveMoodStartedAt=tk();
+  save(); renderHome(); renderSettings(); renderData();
+}
 function togStrk(){ S.streaksOn=!S.streaksOn; save(); renderMetrics(); renderSettings(); }
 function doDelete(){ if(confirm('Delete all Solio data?')){ localStorage.removeItem('solio1'); location.reload(); } }
 function exportData(){
@@ -1331,6 +1836,29 @@ function exportData(){
   a.href=url; a.download='solio-export-'+tk()+'.json';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url); toast('Data exported');
+}
+function openImportData(){
+  var input=document.getElementById('importDataInput');
+  if(!input) return;
+  input.value='';
+  input.click();
+}
+function handleImportData(event){
+  var file=event&&event.target&&event.target.files&&event.target.files[0];
+  if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      var incoming=JSON.parse(e.target.result);
+      if(!incoming||typeof incoming!=='object') throw new Error('Invalid file');
+      localStorage.setItem('solio1', JSON.stringify(incoming));
+      toast('Data imported');
+      setTimeout(function(){ location.reload(); },250);
+    }catch(err){
+      toast('Import failed');
+    }
+  };
+  reader.readAsText(file);
 }
 function openGoal(mid){
   var m=getMeta(mid); if(!m) return;
@@ -1345,12 +1873,20 @@ function openGoal(mid){
 function saveGoal(){
   var mid=document.getElementById('goalMid').value;
   var val=document.getElementById('goalInp').value.trim();
-  if(val) S.goals[mid]=val; else delete S.goals[mid];
+  if(!S.goalStartedAt) S.goalStartedAt={};
+  if(val){
+    if(!S.goals[mid]) S.goalStartedAt[mid]=tk();
+    S.goals[mid]=val;
+  } else {
+    delete S.goals[mid];
+    delete S.goalStartedAt[mid];
+  }
   save(); closeModal(); renderMetrics(); renderSettings();
 }
 function deleteGoal(){
   var mid=document.getElementById('goalMid').value;
   if(S.goals) delete S.goals[mid];
+  if(S.goalStartedAt) delete S.goalStartedAt[mid];
   save(); closeModal(); renderMetrics(); renderSettings(); toast('Goal removed');
 }
 function saveCustom(){
@@ -1359,7 +1895,9 @@ function saveCustom(){
   if(!name){ toast('Enter a name'); return; }
   if(!S.customStats) S.customStats=[];
   var id='cs_'+Date.now();
-  S.customStats.push({id:id,name:name,icon:'',unit:unit||'--'});
+  S.customStats.push({id:id,name:name,icon:'',unit:unit||'--',createdAt:tk()});
+  if(!S.metricAddedAt) S.metricAddedAt={};
+  S.metricAddedAt[id]=tk();
   S.metrics.push(id);
   save(); closeModal();
   document.getElementById('csName').value='';
